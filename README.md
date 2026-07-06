@@ -4,7 +4,7 @@
 [![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-blue.svg)](LICENSE)
 [![dataset: CC-BY-4.0](https://img.shields.io/badge/dataset-CC--BY--4.0-green.svg)](dataset/LICENSE)
 
-**Try it in your browser:** https://romil10.github.io/jaanchlo/ (no install, no account, runs on your device)
+**Try it in your browser:** https://jaanchlo.regnor.systems (no install, no account, runs on your device)
 
 A free, open-source scam shield for Indian elders and their families. Paste a message, upload a screenshot, or answer a few questions, and get a plain verdict in your own language: what it is, why it is suspicious, and exactly what to do next.
 
