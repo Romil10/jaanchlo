@@ -30,8 +30,10 @@
   /* header */
   header{border-bottom:1px solid var(--black)}
   .nav{display:flex;align-items:baseline;justify-content:space-between;padding:16px 0}
-  .wordmark{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none}
+  .brand{display:flex;align-items:baseline;gap:8px;min-width:0}
+  .wordmark{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
   .wordmark span{font-weight:500;color:var(--gray)}
+  .byline{font-size:12.5px;color:var(--gray-light);font-weight:600;white-space:nowrap}
   .nav a.gh{font-size:15px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--black)}
 
   /* hero */
@@ -137,7 +139,7 @@
 
 <header>
   <div class="wrap nav">
-    <a class="wordmark" href="/">JaanchLo <span>जांच लो</span></a>
+    <div class="brand"><a class="wordmark" href="/">JaanchLo <span>जांच लो</span></a><span class="byline">by Regnor</span></div>
     <a class="gh" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 </header>
