@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/check",
+      "destination": "/app/jaanchlo_app.html"
+    }
+  ]
+}
