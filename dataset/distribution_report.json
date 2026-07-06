@@ -1,0 +1,26 @@
+{
+ "total": 3172,
+ "by_split": {
+  "train": 2482,
+  "val": 438,
+  "golden": 252
+ },
+ "by_cat": {
+  "digital_arrest": 336,
+  "courier_parcel": 276,
+  "upi_payment_fraud": 276,
+  "investment_trading": 296,
+  "job_task": 316,
+  "impersonation_relationship": 256,
+  "benign": 936,
+  "official_phishing": 260,
+  "loan_app": 220
+ },
+ "by_lang": {
+  "en": 1588,
+  "hinglish": 952,
+  "hi": 632
+ },
+ "benign_share": 0.295,
+ "scam_share": 0.705
+}
