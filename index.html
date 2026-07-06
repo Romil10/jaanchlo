@@ -7,243 +7,246 @@
 <meta name="description" content="Free, open-source scam shield for Indian elders and families. Paste a message, upload a screenshot, or answer a few questions and get a plain verdict: Safe, Be Careful, or Danger. English, Hindi, Hinglish. Runs on your device.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1b2230; --ink-soft:#4a5468; --ink-faint:#8b93a5;
-    --canvas:#fbfbf8; --card:#ffffff; --line:#e5e4dd;
-    --safe:#0e7a3b; --safe-bg:#e9f6ee;
-    --warn:#a95f07; --warn-bg:#fdf3e2;
-    --danger:#bb1f2e; --danger-bg:#fceaea;
-    --cta:#14522f; --cta-hover:#0e3f24;
+    --black:#0a0a0a;
+    --white:#ffffff;
+    --gray:#555555;
+    --gray-light:#8a8a8a;
+    --line:#e2e2e2;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Mukta',system-ui,sans-serif;background:var(--canvas);color:var(--ink);line-height:1.6;font-size:18px}
-  .tricolor{height:6px;background:linear-gradient(90deg,var(--safe) 0 33.3%,#d98a12 33.3% 66.6%,var(--danger) 66.6% 100%)}
-  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
-  a{color:var(--cta)}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter','Noto Sans Devanagari',system-ui,sans-serif;
+    background:var(--white);color:var(--black);
+    font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+  a{color:var(--black)}
+
   /* header */
-  header{padding:18px 0;border-bottom:1px solid var(--line);background:var(--card)}
-  .nav{display:flex;align-items:center;gap:16px}
-  .wordmark{font-weight:800;font-size:24px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
-  .wordmark .hi{color:var(--danger);font-weight:700}
-  .nav .spacer{flex:1}
-  .nav a.plain{color:var(--ink-soft);text-decoration:none;font-weight:600;font-size:16px}
-  .nav a.plain:hover{color:var(--ink)}
-  .btn{display:inline-block;background:var(--cta);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;padding:10px 20px;font-size:17px}
-  .btn:hover{background:var(--cta-hover)}
-  .btn.big{font-size:21px;padding:16px 34px;border-radius:12px}
-  .btn.ghost{background:transparent;color:var(--cta);border:2px solid var(--cta)}
-  .btn.ghost:hover{background:#f0f5f1}
+  header{border-bottom:1px solid var(--black)}
+  .nav{display:flex;align-items:baseline;justify-content:space-between;padding:16px 0}
+  .wordmark{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none}
+  .wordmark span{font-weight:500;color:var(--gray)}
+  .nav a.gh{font-size:15px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--black)}
+
   /* hero */
-  .hero{padding:72px 0 40px;text-align:center}
-  .hero h1{font-size:clamp(34px,5.5vw,58px);font-weight:800;line-height:1.15;letter-spacing:-.015em}
-  .hero .hindi{display:block;margin-top:10px;font-size:clamp(22px,3.2vw,32px);font-weight:600;color:var(--ink-soft)}
-  .hero p.lede{max-width:640px;margin:24px auto 0;font-size:20px;color:var(--ink-soft)}
-  .hero .cta-row{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .verdicts{margin:44px auto 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .chip{display:flex;align-items:center;gap:10px;border-radius:999px;padding:10px 22px;font-weight:700;font-size:18px;border:1.5px solid transparent}
-  .chip small{display:block;font-weight:500;font-size:14px;opacity:.85}
-  .chip.safe{background:var(--safe-bg);color:var(--safe);border-color:#bfe3cc}
-  .chip.warn{background:var(--warn-bg);color:var(--warn);border-color:#f0d9b0}
-  .chip.danger{background:var(--danger-bg);color:var(--danger);border-color:#f2c2c6}
-  .dot{width:14px;height:14px;border-radius:50%;flex:none}
-  .chip.safe .dot{background:var(--safe)} .chip.warn .dot{background:#d98a12} .chip.danger .dot{background:var(--danger)}
-  /* emergency strip */
-  .emergency{background:var(--danger-bg);border-top:1px solid #f2c2c6;border-bottom:1px solid #f2c2c6;padding:14px 0;text-align:center;font-size:17px}
-  .emergency strong{color:var(--danger)}
-  .emergency a{color:var(--danger);font-weight:800;text-decoration:none;border-bottom:2px solid var(--danger)}
+  .hero{padding:64px 0 56px}
+  h1{font-size:clamp(34px,9vw,56px);font-weight:800;line-height:1.06;letter-spacing:-.03em}
+  .hero .hi{display:block;margin-top:14px;font-size:clamp(21px,5.5vw,30px);font-weight:600;color:var(--gray);letter-spacing:0}
+  .hero p{margin-top:22px;font-size:18px;color:var(--gray);max-width:34em}
+  .cta{
+    display:block;width:100%;max-width:360px;margin-top:32px;
+    background:var(--black);color:var(--white);text-align:center;text-decoration:none;
+    font-size:18px;font-weight:700;padding:17px 28px;min-height:56px;
+  }
+  .cta:active{background:#333}
+  .meta-line{margin-top:18px;font-size:14.5px;color:var(--gray-light);font-weight:500}
+
+  /* verdict list */
+  .verdicts{border-top:1px solid var(--black);border-bottom:1px solid var(--black)}
+  .verdicts .row{display:flex;align-items:baseline;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+  .verdicts .row:first-child{border-top:none}
+  .verdicts .mark{font-weight:800;flex:none;width:20px;text-align:center}
+  .verdicts .name{font-weight:700;flex:none;width:108px;font-size:16.5px}
+  .verdicts .desc{color:var(--gray);font-size:15.5px}
+  .verdicts-label{padding:16px 0 6px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-light)}
+
+  /* emergency, inverted */
+  .emergency{background:var(--black);color:var(--white);padding:22px 0}
+  .emergency p{font-size:16.5px;line-height:1.55}
+  .emergency strong{font-weight:800}
+  .emergency a{color:var(--white);font-weight:800;text-decoration:none;border-bottom:2px solid var(--white)}
+
   /* sections */
-  section{padding:64px 0}
-  section.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
-  .kicker{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-faint);margin-bottom:10px}
-  .sub{color:var(--ink-soft);max-width:680px;font-size:19px}
-  /* stats */
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:36px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
-  section.alt .stat{background:var(--canvas)}
-  .stat .n{font-size:34px;font-weight:800;line-height:1.1}
-  .stat .l{color:var(--ink-soft);font-size:15.5px;margin-top:4px;line-height:1.4}
-  /* families grid */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:36px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-  section.alt .card{background:var(--canvas)}
-  .card .em{font-size:26px}
-  .card h3{font-size:19px;font-weight:700;margin:8px 0 2px}
-  .card .hi{font-size:15px;color:var(--ink-faint);font-weight:600}
-  .card p{font-size:15.5px;color:var(--ink-soft);margin-top:8px;line-height:1.5}
+  section{padding:56px 0 8px}
+  h2{font-size:clamp(24px,6vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.15;padding-top:28px;border-top:1px solid var(--black)}
+  section > .wrap > p, .prose{margin-top:16px;color:var(--gray);font-size:16.5px;max-width:36em}
+  .prose b, section p b{color:var(--black);font-weight:700}
+
+  /* families */
+  .fam{margin-top:28px}
+  .fam .item{padding:18px 0;border-top:1px solid var(--line)}
+  .fam .item:first-child{border-top:none}
+  .fam .head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .fam .num{font-size:13px;font-weight:700;color:var(--gray-light);font-variant-numeric:tabular-nums;flex:none;width:24px}
+  .fam h3{font-size:17.5px;font-weight:700;letter-spacing:-.01em}
+  .fam .hi{font-size:14.5px;color:var(--gray-light);font-weight:600}
+  .fam p{margin:4px 0 0 36px;font-size:15.5px;color:var(--gray);max-width:34em}
+
   /* steps */
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px;counter-reset:step}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
-  section.alt .step{background:var(--canvas)}
-  .step::before{counter-increment:step;content:counter(step);display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:17px;margin-bottom:12px}
-  .step h3{font-size:19px;font-weight:700;margin-bottom:6px}
-  .step p{font-size:15.5px;color:var(--ink-soft);line-height:1.5}
-  /* metrics table */
-  table{width:100%;border-collapse:collapse;margin-top:32px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:16.5px}
-  section.alt table{background:var(--canvas)}
-  th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
-  th{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-faint)}
-  tr:last-child td{border-bottom:none}
-  td.num{font-weight:800;font-variant-numeric:tabular-nums}
-  td.good{color:var(--safe)}
-  .fineprint{margin-top:14px;font-size:15px;color:var(--ink-faint)}
-  /* privacy */
-  .pledge{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:36px}
-  .pledge .card h3{margin-top:0}
+  .steps{margin-top:24px}
+  .steps .step{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+  .steps .step:first-child{border-top:none}
+  .steps .n{flex:none;width:28px;height:28px;border:1.5px solid var(--black);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;margin-top:2px}
+  .steps h3{font-size:17px;font-weight:700}
+  .steps p{font-size:15.5px;color:var(--gray);margin-top:2px;max-width:32em}
+
+  /* results table */
+  .results{margin-top:26px;border-top:1px solid var(--black)}
+  .results .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .results .m{font-size:15.5px;color:var(--gray);max-width:22em}
+  .results .v{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .results-note{margin-top:14px;font-size:14px;color:var(--gray-light);max-width:36em}
+
+  /* plain list */
+  .plain-list{margin-top:20px}
+  .plain-list li{list-style:none;padding:12px 0;border-top:1px solid var(--line);font-size:16px;color:var(--gray)}
+  .plain-list li:first-child{border-top:none}
+  .plain-list b{color:var(--black)}
+
+  /* limits box */
+  .limits{margin-top:28px;border:1.5px solid var(--black);padding:20px 22px;max-width:40em}
+  .limits p{font-size:15.5px;color:var(--gray)}
+  .limits b{color:var(--black)}
+
   /* open source */
-  .open-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-  .lic{margin-top:22px;font-size:15.5px;color:var(--ink-soft)}
-  .lic code{background:#f1f0ea;border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-size:14px}
-  /* honesty */
-  .honest{border-left:4px solid #d98a12;background:var(--warn-bg);border-radius:0 12px 12px 0;padding:20px 24px;margin-top:36px;max-width:760px}
-  .honest strong{color:var(--warn)}
-  /* footer */
-  footer{background:var(--ink);color:#cfd5e2;padding:52px 0 40px;font-size:16px}
-  footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
-  footer h4{color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
-  footer a{color:#e8ecf5;text-decoration:none;border-bottom:1px solid #4a5468}
-  footer a:hover{border-color:#e8ecf5}
-  footer .base{margin-top:36px;padding-top:20px;border-top:1px solid #333c50;color:#8b93a5;font-size:14.5px}
-  .helpline-big{font-size:30px;font-weight:800;color:#fff}
+  .btn-line{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn-outline{
+    display:inline-block;border:1.5px solid var(--black);color:var(--black);
+    text-decoration:none;font-weight:700;font-size:16px;padding:13px 24px;min-height:48px;
+  }
+  .btn-outline:active{background:var(--black);color:var(--white)}
+  .lic{margin-top:20px;font-size:14.5px;color:var(--gray-light)}
+  .lic code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13px;color:var(--gray);border:1px solid var(--line);padding:1px 6px}
+
+  /* footer, inverted */
+  footer{background:var(--black);color:var(--white);margin-top:72px;padding:52px 0 44px}
+  footer .help-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a}
+  footer .helpline{font-size:clamp(44px,12vw,64px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-top:6px}
+  footer .help-sub{color:#c9c9c9;font-size:15.5px;margin-top:6px;max-width:30em}
+  footer .links{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px 26px}
+  footer .links a{color:var(--white);font-size:15px;font-weight:600;text-decoration:none;border-bottom:1px solid #666}
+  footer .base{margin-top:36px;padding-top:22px;border-top:1px solid #333;color:#9a9a9a;font-size:14px;max-width:36em}
+  footer .base a{color:#c9c9c9}
+
+  @media (min-width:720px){
+    body{font-size:18px}
+    .wrap{padding:0 24px}
+    .hero{padding:96px 0 72px}
+    .cta{display:inline-block;width:auto;min-width:280px}
+    .fam p{max-width:38em}
+  }
 </style>
 </head>
 <body>
 
-<div class="tricolor"></div>
-
 <header>
   <div class="wrap nav">
-    <a class="wordmark" href="/">Jaanch<span class="hi">Lo</span> <span style="font-weight:600;color:var(--ink-faint);font-size:18px">· जांच लो</span></a>
-    <span class="spacer"></span>
-    <a class="plain" href="#how">How it works</a>
-    <a class="plain" href="#open">Open source</a>
-    <a class="plain" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a class="btn" href="app/jaanchlo_app.html">Open the app</a>
+    <a class="wordmark" href="/">JaanchLo <span>जांच लो</span></a>
+    <a class="gh" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 </header>
 
-<section class="hero wrap">
-  <h1>Suspicious message? Check it first.
-    <span class="hindi">शक हो तो पहले जांच लो।</span>
-  </h1>
-  <p class="lede">A free scam shield for Indian elders and their families. Paste the message, upload a screenshot, or answer a few questions. Get a plain answer in your language: what it is, why it is suspicious, and exactly what to do next.</p>
-  <div class="cta-row">
-    <a class="btn big" href="app/jaanchlo_app.html">Check a message now</a>
-    <a class="btn big ghost" href="app/jaanchlo_app.html">ऐप खोलें</a>
+<div class="hero">
+  <div class="wrap">
+    <h1>Suspicious message?<br>Check it first.
+      <span class="hi">शक हो तो पहले जांच लो।</span>
+    </h1>
+    <p>A free scam shield for Indian elders and their families. Paste the message, upload a screenshot, or answer a few questions. Get a plain answer: what it is, why it is suspicious, and what to do next.</p>
+    <a class="cta" href="app/jaanchlo_app.html">Open JaanchLo</a>
+    <div class="meta-line">Free · No account · English / हिंदी / Hinglish</div>
   </div>
-  <div class="verdicts">
-    <span class="chip safe"><span class="dot"></span>Safe <small>· आगे बढ़ें</small></span>
-    <span class="chip warn"><span class="dot"></span>Be Careful <small>· रुकें, सोचें</small></span>
-    <span class="chip danger"><span class="dot"></span>Danger <small>· पैसा न भेजें</small></span>
-  </div>
-</section>
-
-<div class="emergency">
-  <div class="wrap"><strong>Being pressured on a call right now?</strong> Hang up. No real police officer arrests anyone over video call. Dial <a href="tel:1930">1930</a>, the national cyber-fraud helpline.</div>
 </div>
 
-<section class="wrap">
-  <div class="kicker">Why this exists</div>
-  <h2>The scams are Indian. The defenses are not.</h2>
-  <p class="sub">Digital-arrest scams alone took an estimated Rs 1,935 crore from Indians in 2024, and victims are disproportionately elderly. Most scam checkers are English-first, cloud-dependent, and blind to the patterns that actually hit Indian phones: fake police video calls, UPI tricks, courier customs threats, deepfake investment reels. JaanchLo is built for exactly that gap.</p>
-  <div class="stats">
-    <div class="stat"><div class="n">8</div><div class="l">India-specific scam families detected</div></div>
-    <div class="stat"><div class="n">48</div><div class="l">signals scored across 5 dimensions</div></div>
-    <div class="stat"><div class="n">3</div><div class="l">languages: English, Hindi, Hinglish</div></div>
-    <div class="stat"><div class="n">0</div><div class="l">bytes of your data leave your device</div></div>
+<div class="wrap">
+  <div class="verdicts-label">It answers with one of three words</div>
+  <div class="verdicts">
+    <div class="row"><span class="mark">●</span><span class="name">Safe</span><span class="desc">Nothing suspicious found. आगे बढ़ें।</span></div>
+    <div class="row"><span class="mark">◐</span><span class="name">Be Careful</span><span class="desc">Some warning signs. Verify before you act. रुकें, सोचें।</span></div>
+    <div class="row"><span class="mark">○</span><span class="name">Danger</span><span class="desc">Strong scam pattern. Do not pay, do not share OTP. पैसा न भेजें।</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Why this exists</h2>
+    <p>Digital-arrest scams alone took an estimated <b>Rs 1,935 crore</b> from Indians in 2024, and victims are disproportionately elderly. Most scam checkers are English-first, cloud-dependent, and blind to the patterns that actually hit Indian phones. JaanchLo is built for exactly that gap: it knows the Indian scripts, reads Hindi and Hinglish, and runs entirely on your device.</p>
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="wrap">
-    <div class="kicker">Coverage</div>
-    <h2>Built for the scams actually hitting India</h2>
-    <div class="grid">
-      <div class="card"><div class="em">🚨</div><h3>Digital arrest</h3><div class="hi">डिजिटल अरेस्ट</div><p>"CBI officer" on video call, arrest warrant, demands to stay on the line and pay a "verification deposit".</p></div>
-      <div class="card"><div class="em">📦</div><h3>Courier &amp; parcel</h3><div class="hi">कूरियर धोखा</div><p>"Your FedEx parcel has drugs in it." Customs fine, police transfer, pressure to pay immediately.</p></div>
-      <div class="card"><div class="em">🏦</div><h3>Bank &amp; official phishing</h3><div class="hi">बैंक फ़िशिंग</div><p>KYC expiry, PAN update, electricity disconnection tonight. A link that looks almost official.</p></div>
-      <div class="card"><div class="em">📱</div><h3>UPI payment fraud</h3><div class="hi">UPI धोखा</div><p>"I sent you money by mistake, please return it." Collect requests and QR codes that take instead of give.</p></div>
-      <div class="card"><div class="em">📈</div><h3>Investment &amp; deepfake reels</h3><div class="hi">निवेश घोटाला</div><p>Celebrity deepfake promising guaranteed returns, WhatsApp "trading groups", apps that never pay out.</p></div>
-      <div class="card"><div class="em">💼</div><h3>Job, task &amp; prize</h3><div class="hi">नौकरी/इनाम घोटाला</div><p>Easy work-from-home tasks, small payouts first, then a "deposit to unlock your earnings". Lottery wins you never entered.</p></div>
-      <div class="card"><div class="em">💸</div><h3>Loan-app extortion</h3><div class="hi">लोन ऐप धमकी</div><p>Instant loan, then harassment: morphed photos, threats to contacts, repayment demands that never end.</p></div>
-      <div class="card"><div class="em">👤</div><h3>Family impersonation</h3><div class="hi">परिवार बनकर धोखा</div><p>"Mummy, my phone broke, this is my new number, I need money urgently." Sometimes with a cloned voice.</p></div>
+    <h2>What it detects</h2>
+    <p>Eight scam families, learned from Indian cyber-fraud advisories and reported cases.</p>
+    <div class="fam">
+      <div class="item"><div class="head"><span class="num">01</span><h3>Digital arrest</h3><span class="hi">डिजिटल अरेस्ट</span></div><p>"CBI officer" on a video call, an arrest warrant, demands to stay on the line and pay a deposit.</p></div>
+      <div class="item"><div class="head"><span class="num">02</span><h3>Courier and parcel</h3><span class="hi">कूरियर धोखा</span></div><p>"Your parcel has drugs in it." A customs fine, a police transfer, pressure to pay now.</p></div>
+      <div class="item"><div class="head"><span class="num">03</span><h3>Bank and official phishing</h3><span class="hi">बैंक फ़िशिंग</span></div><p>KYC expiry, PAN update, electricity cut tonight. A link that looks almost official.</p></div>
+      <div class="item"><div class="head"><span class="num">04</span><h3>UPI payment fraud</h3><span class="hi">UPI धोखा</span></div><p>"I sent you money by mistake, please return it." Collect requests and QR codes that take instead of give.</p></div>
+      <div class="item"><div class="head"><span class="num">05</span><h3>Investment and deepfake reels</h3><span class="hi">निवेश घोटाला</span></div><p>A celebrity deepfake promising guaranteed returns, WhatsApp trading groups, apps that never pay out.</p></div>
+      <div class="item"><div class="head"><span class="num">06</span><h3>Job, task and prize</h3><span class="hi">नौकरी और इनाम घोटाला</span></div><p>Easy tasks with small payouts first, then a deposit to unlock your earnings. Lotteries you never entered.</p></div>
+      <div class="item"><div class="head"><span class="num">07</span><h3>Loan-app extortion</h3><span class="hi">लोन ऐप धमकी</span></div><p>An instant loan, then harassment: morphed photos, threats to your contacts, demands that never end.</p></div>
+      <div class="item"><div class="head"><span class="num">08</span><h3>Family impersonation</h3><span class="hi">परिवार बनकर धोखा</span></div><p>"Mummy, my phone broke, this is my new number, send money urgently." Sometimes with a cloned voice.</p></div>
     </div>
   </div>
 </section>
 
-<section class="wrap" id="how">
-  <div class="kicker">How it works</div>
-  <h2>Three steps to a plain answer</h2>
-  <div class="steps">
-    <div class="step"><h3>Share what you got</h3><p>Paste the message, upload a screenshot (read on your device, never uploaded), or answer the live-call checklist: "am I being scammed right now?"</p></div>
-    <div class="step"><h3>The SREM engine scores it</h3><p>48 signals across Authority, Fear, Payment, Channel, and Content. 12 hard knockout rules catch the unmistakable patterns, and false-alarm guards protect real messages from real banks.</p></div>
-    <div class="step"><h3>Get a verdict and a next step</h3><p>Safe, Be Careful, or Danger, with the reasons in plain English or Hindi and exactly what to do next, including when to call 1930.</p></div>
-  </div>
-</section>
-
-<section class="alt">
+<section>
   <div class="wrap">
-    <div class="kicker">Measured, not claimed</div>
-    <h2>Tested against 3,172 labeled messages</h2>
-    <p class="sub">Every number below is reproduced by one command in the open repository. The golden holdout shares no templates with the rest of the data, and expected severities are authored independently of the engine, so the evaluation is not circular.</p>
-    <table>
-      <tr><th>Metric</th><th>Golden holdout</th><th>Full dataset</th></tr>
-      <tr><td>Scam recall (a scam is never rated Safe)</td><td class="num good">100%</td><td class="num good">100%</td></tr>
-      <tr><td>High-severity recall (rated Danger)</td><td class="num good">100%</td><td class="num">92.9%</td></tr>
-      <tr><td>False alarms on genuine messages</td><td class="num good">0.0%</td><td class="num good">0.0%</td></tr>
-    </table>
-    <p class="fineprint">The false-alarm rate is the number we guard hardest. A shield that cries wolf gets uninstalled, and then it protects no one.</p>
-    <div class="honest"><strong>Honest limits:</strong> JaanchLo is a second opinion, not a guarantee. It cannot see who is really calling, and new scam scripts appear every month. When in doubt: do not pay, hang up, and call 1930.</div>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="kicker">Privacy</div>
-  <h2>Nothing you check ever leaves your phone</h2>
-  <div class="pledge">
-    <div class="card"><h3>No account</h3><p>No sign-up, no phone number, no OTP. Open it and use it.</p></div>
-    <div class="card"><h3>On-device analysis</h3><p>The engine runs in your browser. Screenshots are read locally. There is no server storing your messages.</p></div>
-    <div class="card"><h3>Verified by tests</h3><p>The reference API neither logs request bodies nor writes them to disk. That claim is enforced by an automated test in the repository.</p></div>
-  </div>
-</section>
-
-<section class="alt" id="open">
-  <div class="wrap">
-    <div class="kicker">Open source · open data</div>
-    <h2>Every claim is inspectable</h2>
-    <p class="sub">The detector, the scoring rubric, the 3,172-row EN/HI/Hinglish scam corpus, the tests, and the CI gate are all public. Nothing like this dataset existed openly before. Fork it, audit it, improve it.</p>
-    <div class="open-cta">
-      <a class="btn" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-      <a class="btn ghost" href="https://github.com/Romil10/jaanchlo/blob/main/dataset/DATASET_CARD.md" target="_blank" rel="noopener noreferrer">Read the dataset card</a>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><h3>Share what you received</h3><p>Paste the message, upload a screenshot (read on your device, never uploaded), or answer the live-call checklist.</p></div></div>
+      <div class="step"><span class="n">2</span><div><h3>The engine scores it</h3><p>48 signals across five dimensions: authority, fear, payment, channel, content. Twelve hard rules catch the unmistakable patterns; guards protect real messages from real banks.</p></div></div>
+      <div class="step"><span class="n">3</span><div><h3>Read the verdict and act</h3><p>Safe, Be Careful, or Danger, with reasons in plain English or Hindi and the exact next step, including when to call 1930.</p></div></div>
     </div>
-    <p class="lic">Code <code>AGPL-3.0</code> · Dataset <code>CC-BY-4.0</code> · Model, when it ships, <code>Apache-2.0</code>. One command, <code>node engine/gate.mjs</code>, runs the entire test and evaluation gate.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Measured, not claimed</h2>
+    <p>Evaluated against <b>3,172 labeled messages</b> with a held-out golden set that shares nothing with the rest. Every number is reproduced by one command in the open repository.</p>
+    <div class="results">
+      <div class="row"><span class="m">A scam is never rated Safe</span><span class="v">100%</span></div>
+      <div class="row"><span class="m">High-severity scams rated Danger</span><span class="v">92.9%</span></div>
+      <div class="row"><span class="m">False alarms on genuine messages</span><span class="v">0.0%</span></div>
+    </div>
+    <p class="results-note">The false-alarm rate is the number we guard hardest. A shield that cries wolf gets uninstalled, and then it protects no one.</p>
+    <div class="limits">
+      <p><b>Honest limits.</b> JaanchLo is a second opinion, not a guarantee. It cannot see who is really calling, and new scam scripts appear every month. When in doubt: do not pay, hang up, call 1930.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Nothing leaves your phone</h2>
+    <ul class="plain-list">
+      <li><b>No account.</b> No sign-up, no phone number, no OTP. Open it and use it.</li>
+      <li><b>On-device analysis.</b> The engine runs in your browser. Screenshots are read locally. No server stores your messages.</li>
+      <li><b>Verified by tests.</b> The reference API neither logs request bodies nor writes them to disk. An automated test enforces that claim.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Open source, open data</h2>
+    <p>The detector, the scoring rubric, the 3,172-row English, Hindi and Hinglish scam corpus, the tests, and the CI gate are all public. Nothing like this dataset existed openly before. Fork it, audit it, improve it.</p>
+    <div class="btn-line">
+      <a class="btn-outline" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a class="btn-outline" href="https://github.com/Romil10/jaanchlo/blob/main/dataset/DATASET_CARD.md" target="_blank" rel="noopener noreferrer">Dataset card</a>
+    </div>
+    <p class="lic">Code <code>AGPL-3.0</code> · Dataset <code>CC-BY-4.0</code> · Model, when it ships, <code>Apache-2.0</code></p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="cols">
-      <div>
-        <h4>If you are being scammed</h4>
-        <p>Hang up. Do not pay.<br>Call the national helpline:</p>
-        <p class="helpline-big">1930</p>
-        <p style="margin-top:6px"><a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer">cybercrime.gov.in</a></p>
-      </div>
-      <div>
-        <h4>Project</h4>
-        <p><a href="app/jaanchlo_app.html">Open the app</a></p>
-        <p style="margin-top:8px"><a href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">Source code on GitHub</a></p>
-        <p style="margin-top:8px"><a href="https://github.com/Romil10/jaanchlo/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer">Roadmap</a></p>
-      </div>
-      <div>
-        <h4>About</h4>
-        <p>JaanchLo (जांच लो, "check it first") is a free public-good project. It gives a fast, explainable second opinion. It is not a guarantee and does not replace the police or your bank.</p>
-      </div>
+    <div class="help-label">Being scammed right now? Hang up. Call</div>
+    <div class="helpline">1930</div>
+    <p class="help-sub">The national cyber-fraud helpline. Also report at <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color:#fff">cybercrime.gov.in</a>. No real police officer arrests anyone over a video call.</p>
+    <div class="links">
+      <a href="app/jaanchlo_app.html">Open the app</a>
+      <a href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">Source code</a>
+      <a href="https://github.com/Romil10/jaanchlo/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
     </div>
-    <div class="base">Built in Bengaluru by <a href="https://regnor.systems" target="_blank" rel="noopener noreferrer">Regnor</a>. Free forever. No ads, no tracking, no account.</div>
+    <div class="base">JaanchLo (जांच लो, "check it first") is a free public-good project by <a href="https://regnor.systems" target="_blank" rel="noopener noreferrer">Regnor</a>, Bengaluru. No ads, no tracking, no account. A second opinion, not a guarantee.</div>
   </div>
 </footer>
 
