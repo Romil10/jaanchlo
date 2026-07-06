@@ -1,0 +1,284 @@
+{
+ "version": "0.2",
+ "source": "extracted from jaanchlo_app.html engine (single source of truth)",
+ "weights": {
+  "E1": 0.25,
+  "E2": 0.25,
+  "E3": 0.25,
+  "E4": 0.15,
+  "E5": 0.1
+ },
+ "verdict_thresholds": {
+  "safe_below": 30,
+  "care_below": 60,
+  "danger_at_or_above": 60
+ },
+ "evaluations": {
+  "E1": "Authority Impersonation",
+  "E2": "Fear and Urgency Pressure",
+  "E3": "Payment Red Flags",
+  "E4": "Channel and Identity Signals",
+  "E5": "Content Authenticity"
+ },
+ "signals": [
+  {
+   "code": "auth.police",
+   "eval": "E1",
+   "points": 60
+  },
+  {
+   "code": "auth.judge",
+   "eval": "E1",
+   "points": 60
+  },
+  {
+   "code": "auth.courier",
+   "eval": "E1",
+   "points": 45
+  },
+  {
+   "code": "auth.bank",
+   "eval": "E1",
+   "points": 35
+  },
+  {
+   "code": "auth.utility",
+   "eval": "E1",
+   "points": 35
+  },
+  {
+   "code": "auth.govt",
+   "eval": "E1",
+   "points": 40
+  },
+  {
+   "code": "auth.celebrity",
+   "eval": "E1",
+   "points": 45
+  },
+  {
+   "code": "auth.family_clone",
+   "eval": "E1",
+   "points": 50
+  },
+  {
+   "code": "auth.employer",
+   "eval": "E1",
+   "points": 35
+  },
+  {
+   "code": "fear.arrest_threat",
+   "eval": "E2",
+   "points": 55
+  },
+  {
+   "code": "fear.digital_arrest",
+   "eval": "E2",
+   "points": 60
+  },
+  {
+   "code": "fear.isolation",
+   "eval": "E2",
+   "points": 65
+  },
+  {
+   "code": "fear.deadline",
+   "eval": "E2",
+   "points": 30
+  },
+  {
+   "code": "fear.account_block",
+   "eval": "E2",
+   "points": 35
+  },
+  {
+   "code": "fear.legal_case",
+   "eval": "E2",
+   "points": 45
+  },
+  {
+   "code": "fear.emergency_urgency",
+   "eval": "E2",
+   "points": 45
+  },
+  {
+   "code": "fear.shame_threat",
+   "eval": "E2",
+   "points": 60
+  },
+  {
+   "code": "fear.sunk_cost",
+   "eval": "E2",
+   "points": 35
+  },
+  {
+   "code": "pay.deposit_refundable",
+   "eval": "E3",
+   "points": 65
+  },
+  {
+   "code": "pay.tax_fee_unlock",
+   "eval": "E3",
+   "points": 60
+  },
+  {
+   "code": "pay.qr_to_receive",
+   "eval": "E3",
+   "points": 60
+  },
+  {
+   "code": "pay.collect_request",
+   "eval": "E3",
+   "points": 40
+  },
+  {
+   "code": "pay.refund_return_ask",
+   "eval": "E3",
+   "points": 40
+  },
+  {
+   "code": "pay.prepaid_task_deposit",
+   "eval": "E3",
+   "points": 55
+  },
+  {
+   "code": "pay.fee_advance",
+   "eval": "E3",
+   "points": 50
+  },
+  {
+   "code": "pay.gift_card_crypto",
+   "eval": "E3",
+   "points": 55
+  },
+  {
+   "code": "pay.screen_share",
+   "eval": "E3",
+   "points": 60
+  },
+  {
+   "code": "pay.upi_individual",
+   "eval": "E3",
+   "points": 30
+  },
+  {
+   "code": "pay.demand",
+   "eval": "E3",
+   "points": 45
+  },
+  {
+   "code": "pay.small_payout_lure",
+   "eval": "E3",
+   "points": 40
+  },
+  {
+   "code": "chan.intl_number",
+   "eval": "E4",
+   "points": 45
+  },
+  {
+   "code": "chan.video_call_official",
+   "eval": "E4",
+   "points": 55
+  },
+  {
+   "code": "chan.ivr_press1",
+   "eval": "E4",
+   "points": 35
+  },
+  {
+   "code": "chan.app_switch",
+   "eval": "E4",
+   "points": 45
+  },
+  {
+   "code": "chan.apk_download",
+   "eval": "E4",
+   "points": 50
+  },
+  {
+   "code": "chan.shortlink",
+   "eval": "E4",
+   "points": 40
+  },
+  {
+   "code": "chan.new_number_known_photo",
+   "eval": "E4",
+   "points": 50
+  },
+  {
+   "code": "chan.group_invite",
+   "eval": "E4",
+   "points": 35
+  },
+  {
+   "code": "chan.personal_number_official",
+   "eval": "E4",
+   "points": 40
+  },
+  {
+   "code": "content.otp_request",
+   "eval": "E5",
+   "points": 65
+  },
+  {
+   "code": "content.too_good_returns",
+   "eval": "E5",
+   "points": 45
+  },
+  {
+   "code": "content.lottery_prize",
+   "eval": "E5",
+   "points": 50
+  },
+  {
+   "code": "content.deepfake_media",
+   "eval": "E5",
+   "points": 55
+  },
+  {
+   "code": "content.doctored_doc",
+   "eval": "E5",
+   "points": 50
+  },
+  {
+   "code": "content.fake_screenshot",
+   "eval": "E5",
+   "points": 45
+  },
+  {
+   "code": "content.morphed_media_threat",
+   "eval": "E5",
+   "points": 55
+  },
+  {
+   "code": "content.typos_leetspeak",
+   "eval": "E5",
+   "points": 30
+  },
+  {
+   "code": "content.generic_greeting",
+   "eval": "E5",
+   "points": 25
+  }
+ ],
+ "knockouts": {
+  "K1": "any auth.* + (pay.deposit_refundable | pay.tax_fee_unlock)",
+  "K2": "fear.isolation + chan.video_call_official",
+  "K3": "content.otp_request (unless OTP-delivery suppressor)",
+  "K4": "pay.qr_to_receive",
+  "K5": "fear.shame_threat + any pay.*",
+  "K6": "auth.family_clone + (fear.isolation|fear.emergency_urgency) + any pay.*",
+  "K7": "fear.digital_arrest + (fear.isolation | any pay.* | any auth.*)",
+  "K8": "content.lottery_prize + (pay.fee_advance|pay.demand|pay.tax_fee_unlock)",
+  "K9": "pay.screen_share + any auth.*",
+  "K10": "auth.family_clone + chan.new_number_known_photo + any pay.*"
+ },
+ "guards": {
+  "G1": "danger requires signals from >=2 evaluations (knockouts exempt)",
+  "G2": "personalization (name/masked-acct/consumer-id) + no link/callback caps at care",
+  "G3": "family ask without isolation/new-number caps at care",
+  "floor": "2+ scam signals is never safe",
+  "otp_delivery_suppressor": "OTP delivery messages do not count as otp_request"
+ }
+}
