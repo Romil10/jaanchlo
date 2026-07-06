@@ -1,4 +1,10 @@
-# JaanchLo (जांच लो — "check it first")
+# JaanchLo (जांच लो: "check it first")
+
+[![CI](https://github.com/Romil10/jaanchlo/actions/workflows/ci.yml/badge.svg)](https://github.com/Romil10/jaanchlo/actions/workflows/ci.yml)
+[![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-blue.svg)](LICENSE)
+[![dataset: CC-BY-4.0](https://img.shields.io/badge/dataset-CC--BY--4.0-green.svg)](dataset/LICENSE)
+
+**Try it in your browser:** https://romil10.github.io/jaanchlo/ (no install, no account, runs on your device)
 
 A free, open-source scam shield for Indian elders and their families. Paste a message, upload a screenshot, or answer a few questions, and get a plain verdict in your own language: what it is, why it is suspicious, and exactly what to do next.
 
@@ -8,7 +14,7 @@ A free, open-source scam shield for Indian elders and their families. Paste a me
 Digital-arrest scams alone took an estimated **Rs 1,935 crore** from Indians in 2024 (123,672 cases); total cybercrime losses hit **Rs 22,845 crore**, and victims are disproportionately elderly. The everyday defense today is awareness posters and a helpline. Existing open-source scam detectors are hackathon-grade, English-first, cloud-dependent, and blind to India-specific patterns like digital arrest, UPI tricks, and deepfake investment reels. JaanchLo is built for exactly that gap.
 
 ## What it does
-The **SREM engine** (Scam Risk Evaluation Model) scores a message across five dimensions — Authority, Fear, Payment, Channel, Content — over 48 signals, applies 12 hard "knockout" rules and false-alarm guards, then returns one of three elder-simple verdicts with plain-language reasons:
+The **SREM engine** (Scam Risk Evaluation Model) scores a message across five dimensions (Authority, Fear, Payment, Channel, Content) over 48 signals, applies 12 hard "knockout" rules and false-alarm guards, then returns one of three elder-simple verdicts with plain-language reasons:
 
 - 🟢 **Safe** · 🟠 **Be Careful** · 🔴 **Danger**
 
@@ -50,9 +56,9 @@ ROADMAP.md      phases and acceptance metrics
 The app is the single source of truth: `engine/extract.mjs` regenerates the engine module and all verdict copy from `app/jaanchlo_app.html`, so code and product cannot drift. The CI gate re-extracts on every run.
 
 ## Open components (three, all here)
-1. **Dataset** — `dataset/` — CC-BY-4.0. An India-first scam-message corpus in EN/HI/Hinglish; nothing like it exists publicly.
-2. **Engine** — `engine/` + `app/` — AGPL-3.0. The SREM detector, adapters, API, and tests.
-3. **Rubric** — `dataset/rubric.json` — the transparent, inspectable scoring model.
+1. **Dataset** (`dataset/`, CC-BY-4.0): An India-first scam-message corpus in EN/HI/Hinglish; nothing like it exists publicly.
+2. **Engine** (`engine/` + `app/`, AGPL-3.0): The SREM detector, adapters, API, and tests.
+3. **Rubric** (`dataset/rubric.json`): the transparent, inspectable scoring model.
 
 A fine-tuned open model is on the roadmap (`model/`, Apache-2.0) and not yet shipped.
 
