@@ -190,7 +190,7 @@ const SIGNALS = [
   ["auth.govt","E1",40,/\b(pan card|\bpan\b|aadhaar|aadhar|income tax|itdept|incometx|uidai|passport office)\b|पैन|आधार|आयकर/i],
   ["auth.celebrity","E1",45,/\b(ambani|adani|ratan tata|sitharaman|mahindra|modi ji|elon|musk|virat|dhoni)\b/i],
   ["auth.family_clone","E1",50,/\b(beta|beti|mummy|mumma|papa|son|daughter|uncle|aunty|nephew|niece|dad|mom|grandson)\b|बेटा|बेटी|मम्मी|पापा/i],
-  ["auth.employer","E1",35,/\b(hr team|hiring manager|recruitment|placement|digital marketing company|part ?time job)\b|नौकरी|भर्ती/i],
+  ["auth.employer","E1",35,/\b(hr team|hiring manager|recruitment|placement|digital marketing company|part ?time job|work\s?(from|at|@)\s?home|work[- ]from[- ]home|\bwfh\b|new ventures?|job (offer|opening|vacancy)|vacanc(y|ies)|(now hiring|hiring now)|online (job|work)|data entry (job|work)?|no experience (needed|required)|earn from home)\b|नौकरी|भर्ती|घर बैठे (नौकरी|काम)/i],
   ["fear.arrest_threat","E2",55,/\b(arrest|jail|custody|will be arrested|non ?bailable)\b|गिरफ्तार|गिरफ़्तार|जेल/i],
   ["fear.digital_arrest","E2",60,/\bdigital arrest\b|under (digital )?arrest|डिजिटल अरेस्ट/i],
   ["fear.isolation","E2",65,/((do ?not|don'?t|never) (tell|inform)|kisi ko mat bata|mat batana|stay on (the |this )?(camera|call|line|video)|camera band mat|do not disconnect|call ko band mat|confidential (case|matter)|national security|किसी को (मत|न) बता|मत बता(इए|ओ|ना|एं)|कैमरा बंद मत|किसी को सूचित (मत|न))/i],
@@ -211,13 +211,13 @@ const SIGNALS = [
   ["pay.screen_share","E3",60,/\b(anydesk|any desk|teamviewer|team viewer|quick ?support|screen ?shar(e|ing)|remote access|rust ?desk)\b|share (the )?code|code (batao|share|bhejo)/i],
   ["pay.upi_individual","E3",30,/\b(upi|gpay|google pay|phonepe|paytm|bhim)\b|@[a-z]{2,}/i],
   ["pay.demand","E3",45,/\bbhro\b|bhej ?do|bhejo|jama kar(o|do| de)|transfer (kar|money|rs|amount|funds|the money)|paise (bhej|transfer|do|de)|send (the )?money|clear your name|deposit .{0,15}(get|rs)|pay .{0,18}(fee|deposit|tax|fine|to (release|unlock|avoid|clear))|pay rs ?[\d,]+|send rs ?[\d,]+|भेज दो|भेजो|भेजिए|भरो|जमा कर|ट्रांसफ़र कर|ट्रांसफ़र की|अभी ट्रांसफ़र|रुपये भेज/i],
-  ["pay.small_payout_lure","E3",40,/per like|per (video|task|review|rating)|earn .{0,16}(daily|per day|from home)|work from home|ghar baithe (kamai|paise)|rs ?\d+ per|घर बैठे|प्रति लाइक|लाइक कर.{0,12}(रुपये|कमा)|रोज़?.{0,10}कमा/i],
+  ["pay.small_payout_lure","E3",40,/per like|per (video|task|review|rating)|earn .{0,16}(daily|per day|from home)|work\s?(from|at)\s?home|salary\s*(of\s*)?(rs|inr|₹)\s?\d|(monthly|weekly|daily)\s(salary|income|payout)|earn(ing)?s?\s.{0,10}(rs|₹)\s?\d|ghar baithe (kamai|paise)|rs ?\d+ per|घर बैठे|प्रति लाइक|लाइक कर.{0,12}(रुपये|कमा)|रोज़?.{0,10}कमा/i],
   ["chan.intl_number","E4",45,/(\+92|\+84|\+855|\+62|\+234|\+44)\s?\d|international number|foreign number|videsh(i)? number/i],
   ["chan.video_call_official","E4",55,/(skype|video ?call|zoom|whatsapp video).{0,50}(police|officer|cbi|court|statement|arrest|verification)|(police|officer|cbi|court).{0,50}(skype|video ?call|zoom)|camera (band mat|on rakho|chalu rakho)|कैमरा (बंद मत|चालू|ऑन)/i],
   ["chan.ivr_press1","E4",35,/press (1|one)|dial (1|one)|1 dabaye|ek dabaye/i],
   ["chan.app_switch","E4",45,/(download|install|open) (skype|zoom|telegram)|police app|court app/i],
   ["chan.apk_download","E4",50,/\.apk\b|install (this|the|our) app|download (this|the|our|gsin|trading) app|app install karo|link se (app|application)|ऐप (डाउनलोड|इंस्टॉल) कर/i],
-  ["chan.shortlink","E4",40,/(bit\.ly|tinyurl|t\.co|rb\.gy|cutt\.ly|is\.gd|shorturl|http:\/\/[^ ]{0,30}\.(xyz|top|info|link|club))/i],
+  ["chan.shortlink","E4",40,/(bit\.ly|tinyurl|t\.co|rb\.gy|cutt\.ly|is\.gd|shorturl|wa\.me\/|api\.whatsapp\.com|chat\.whatsapp\.com|http:\/\/[^ ]{0,30}\.(xyz|top|info|link|club))/i],
   ["chan.new_number_known_photo","E4",50,/(new number|naya number|phone kho gaya|lost my phone|dropped my phone|this is my new|purana number band)/i],
   ["chan.group_invite","E4",35,/(telegram (group|channel)|whatsapp group|join .{0,20}group|vip group|group me add|trading group)/i],
   ["chan.personal_number_official","E4",40,/(contact|call|whatsapp).{0,10}(kare?in|karo|us)?.{0,6}[6-9]\d{4}[X\d]{4,6}|call urgent.{0,8}\d{10}/i],
@@ -641,7 +641,9 @@ const TESTS=[
  ["Your Swiggy order from Meghana Foods has been delivered. Rate your delivery partner.","safe","benign_swiggy"],
  ["EMI of Rs 3,450 for your HDFC loan is due on 10-Jul. Please maintain sufficient balance in A/c XXXX8821.","safe","benign_emi"],
  ["Reminder: appointment with Dr. Rao tomorrow 11:30 AM at Apollo Clinic, Indiranagar. Reply YES to confirm.","safe","benign_doctor"],
- ["Jio recharge of Rs 299 successful. Validity 28 days. Balance data 2GB/day.","safe","benign_recharge"]
+ ["Jio recharge of Rs 299 successful. Validity 28 days. Balance data 2GB/day.","safe","benign_recharge"],
+ ["Your Work at home with with our new ventures. Contact details with salary Rs36800 at wa.me/917404932358 balanceisPineLabs","care","job_wfh_wame"],
+ ["Congratulations! You are selected for a work from home job, salary Rs 40000 per month. No experience needed. Contact us on WhatsApp wa.me/919900112233 to start.","care","job_wfh_selected"]
 ];
 function renderSelfTest(){
   const el=document.getElementById('selftest');
