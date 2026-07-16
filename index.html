@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JaanchLo · जांच लो · Check it first</title>
+<title>JaanchLo · जांच लो · पहले जांच लो</title>
 <meta name="description" content="Free, open-source scam shield for Indian elders and families. Paste a message, upload a screenshot, or answer a few questions and get a plain verdict: Safe, Be Careful, or Danger. English, Hindi, Hinglish. Runs on your device.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='white'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%230a0a0a' stroke-width='12'/%3E%3Cpath d='M50 14 A36 36 0 0 0 50 86 Z' fill='%230a0a0a'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
@@ -14,14 +14,15 @@
 <meta property="og:image" content="https://jaanchlo.regnor.systems/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_IN">
+<meta property="og:locale" content="hi_IN">
+<meta property="og:locale:alternate" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="JaanchLo: check it first">
 <meta name="twitter:description" content="Free scam shield for Indian elders and families. Plain verdicts in English, Hindi, Hinglish. Runs on your device.">
 <meta name="twitter:image" content="https://jaanchlo.regnor.systems/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --black:#0a0a0a;
@@ -38,22 +39,25 @@
     font-size:17px;line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
+  html[lang="hi"] body{font-family:'Noto Sans Devanagari','Inter',system-ui,sans-serif}
   .wrap{max-width:680px;margin:0 auto;padding:0 20px}
   a{color:var(--black)}
 
   /* header */
   header{border-bottom:1px solid var(--black)}
-  .nav{display:flex;align-items:baseline;justify-content:space-between;padding:16px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
   .brand{display:flex;align-items:baseline;gap:8px;min-width:0}
   .wordmark{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
   .wordmark span{font-weight:500;color:var(--gray)}
   .byline{font-size:12.5px;color:var(--gray-light);font-weight:600;white-space:nowrap}
-  .nav a.gh{font-size:15px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--black)}
+  .lang{display:flex;gap:8px;flex:none}
+  .lang button{background:var(--white);color:var(--black);border:1.5px solid var(--black);border-radius:0;padding:6px 12px;font-size:13px;font-weight:700;min-height:36px;cursor:pointer;font-family:inherit;line-height:1}
+  .lang button.on{background:var(--black);color:var(--white)}
 
   /* hero */
-  .hero{padding:64px 0 56px}
-  h1{font-size:clamp(34px,9vw,56px);font-weight:800;line-height:1.06;letter-spacing:-.03em}
-  .hero .hi{display:block;margin-top:14px;font-size:clamp(21px,5.5vw,30px);font-weight:600;color:var(--gray);letter-spacing:0}
+  .hero{padding:60px 0 52px}
+  h1{font-size:clamp(32px,8.5vw,54px);font-weight:800;line-height:1.08;letter-spacing:-.03em}
+  .hero .subline{margin-top:14px;font-size:clamp(19px,5vw,27px);font-weight:600;color:var(--gray);line-height:1.25}
   .hero p{margin-top:22px;font-size:18px;color:var(--gray);max-width:34em}
   .cta{
     display:block;width:100%;max-width:360px;margin-top:32px;
@@ -68,7 +72,7 @@
   .verdicts .row{display:flex;align-items:baseline;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
   .verdicts .row:first-child{border-top:none}
   .verdicts .mark{font-weight:800;flex:none;width:20px;text-align:center}
-  .verdicts .name{font-weight:700;flex:none;width:108px;font-size:16.5px}
+  .verdicts .name{font-weight:700;flex:none;width:112px;font-size:16.5px}
   .verdicts .desc{color:var(--gray);font-size:15.5px}
   .verdicts-label{padding:16px 0 6px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-light)}
 
@@ -91,7 +95,7 @@
   .fam .head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
   .fam .num{font-size:13px;font-weight:700;color:var(--gray-light);font-variant-numeric:tabular-nums;flex:none;width:24px}
   .fam h3{font-size:17.5px;font-weight:700;letter-spacing:-.01em}
-  .fam .hi{font-size:14.5px;color:var(--gray-light);font-weight:600}
+  .fam .gloss{font-size:14.5px;color:var(--gray-light);font-weight:600}
   .fam p{margin:4px 0 0 36px;font-size:15.5px;color:var(--gray);max-width:34em}
 
   /* steps */
@@ -140,10 +144,11 @@
   footer .base{margin-top:36px;padding-top:22px;border-top:1px solid #333;color:#9a9a9a;font-size:14px;max-width:36em}
   footer .base a{color:#c9c9c9}
 
+  @media (max-width:360px){ .byline{display:none} }
   @media (min-width:720px){
     body{font-size:18px}
     .wrap{padding:0 24px}
-    .hero{padding:96px 0 72px}
+    .hero{padding:92px 0 68px}
     .cta{display:inline-block;width:auto;min-width:280px}
     .fam p{max-width:38em}
   }
@@ -154,126 +159,245 @@
 <header>
   <div class="wrap nav">
     <div class="brand"><a class="wordmark" href="/">JaanchLo <span>जांच लो</span></a><span class="byline">by Regnor</span></div>
-    <a class="gh" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <div class="lang">
+      <button id="lang-hi" onclick="setLang('hi')">हिं</button>
+      <button id="lang-en" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <h1>Suspicious message?<br>Check it first.
-      <span class="hi">शक हो तो पहले जांच लो।</span>
-    </h1>
-    <p>A free scam shield for Indian elders and their families. Paste the message, upload a screenshot, or answer a few questions. Get a plain answer: what it is, why it is suspicious, and what to do next.</p>
-    <a class="cta" href="app/jaanchlo_app.html">Open JaanchLo</a>
-    <div class="meta-line">Free · No account · English / हिंदी / Hinglish</div>
+    <h1 data-i18n="hero_h1">कोई शक वाला मैसेज?<br>पहले जांच लो।</h1>
+    <p class="subline" data-i18n="hero_sub">Suspicious message? Check it first.</p>
+    <p data-i18n="hero_p">भारतीय बुज़ुर्गों और उनके परिवारों के लिए एक मुफ़्त स्कैम शील्ड। मैसेज डालिए, स्क्रीनशॉट अपलोड कीजिए, या कुछ सवालों के जवाब दीजिए। आसान भाषा में जवाब पाइए: यह क्या है, इसमें शक क्यों है, और अब क्या करना है।</p>
+    <a class="cta" href="app/jaanchlo_app.html" data-i18n="cta_open">JaanchLo खोलें</a>
+    <div class="meta-line" data-i18n="meta_line">मुफ़्त · कोई अकाउंट नहीं · हिंदी / English / Hinglish</div>
   </div>
 </div>
 
 <div class="wrap">
-  <div class="verdicts-label">It answers with one of three words</div>
+  <div class="verdicts-label" data-i18n="verdicts_label">यह तीन में से एक शब्द में जवाब देता है</div>
   <div class="verdicts">
-    <div class="row"><span class="mark">○</span><span class="name">Safe</span><span class="desc">Nothing suspicious found. आगे बढ़ें।</span></div>
-    <div class="row"><span class="mark">◐</span><span class="name">Be Careful</span><span class="desc">Some warning signs. Verify before you act. रुकें, सोचें।</span></div>
-    <div class="row"><span class="mark">●</span><span class="name">Danger</span><span class="desc">Strong scam pattern. Do not pay, do not share OTP. पैसा न भेजें।</span></div>
+    <div class="row"><span class="mark">○</span><span class="name" data-i18n="v_safe_name">सुरक्षित</span><span class="desc" data-i18n="v_safe_desc">कुछ भी संदिग्ध नहीं मिला। आगे बढ़ें।</span></div>
+    <div class="row"><span class="mark">◐</span><span class="name" data-i18n="v_care_name">सावधान</span><span class="desc" data-i18n="v_care_desc">कुछ चेतावनी के संकेत हैं। कुछ भी करने से पहले जाँच लें।</span></div>
+    <div class="row"><span class="mark">●</span><span class="name" data-i18n="v_danger_name">ख़तरा</span><span class="desc" data-i18n="v_danger_desc">पक्का स्कैम पैटर्न। पैसे न भेजें, OTP न बताएं।</span></div>
   </div>
 </div>
 
 <section>
   <div class="wrap">
-    <h2>Why this exists</h2>
-    <p>Digital-arrest scams alone took an estimated <b>Rs 1,935 crore</b> from Indians in 2024, and victims are disproportionately elderly. Most scam checkers are English-first, cloud-dependent, and blind to the patterns that actually hit Indian phones. JaanchLo is built for exactly that gap: it knows the Indian scripts, reads Hindi and Hinglish, and runs entirely on your device.</p>
+    <h2 data-i18n="why_h2">यह क्यों बनाया</h2>
+    <p data-i18n="why_p">अकेले digital-arrest स्कैम ने 2024 में भारतीयों से करीब <b>1,935 करोड़ रुपये</b> ठगे, और सबसे ज़्यादा शिकार बुज़ुर्ग बने। ज़्यादातर स्कैम-checker अंग्रेज़ी-पहले हैं, cloud पर निर्भर हैं, और उन तरीक़ों को नहीं पहचानते जो असल में भारतीय फ़ोन पर आते हैं। JaanchLo ठीक इसी कमी के लिए बना है: यह भारतीय पैटर्न पहचानता है, हिंदी और Hinglish पढ़ता है, और पूरी तरह आपके फ़ोन पर चलता है।</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>What it detects</h2>
-    <p>Eight scam families, learned from Indian cyber-fraud advisories and reported cases.</p>
+    <h2 data-i18n="detect_h2">यह क्या पकड़ता है</h2>
+    <p data-i18n="detect_p">आठ तरह के स्कैम, जो भारतीय साइबर-फ्रॉड सलाह और रिपोर्ट किए गए मामलों से सीखे गए हैं।</p>
     <div class="fam">
-      <div class="item"><div class="head"><span class="num">01</span><h3>Digital arrest</h3><span class="hi">डिजिटल अरेस्ट</span></div><p>"CBI officer" on a video call, an arrest warrant, demands to stay on the line and pay a deposit.</p></div>
-      <div class="item"><div class="head"><span class="num">02</span><h3>Courier and parcel</h3><span class="hi">कूरियर धोखा</span></div><p>"Your parcel has drugs in it." A customs fine, a police transfer, pressure to pay now.</p></div>
-      <div class="item"><div class="head"><span class="num">03</span><h3>Bank and official phishing</h3><span class="hi">बैंक फ़िशिंग</span></div><p>KYC expiry, PAN update, electricity cut tonight. A link that looks almost official.</p></div>
-      <div class="item"><div class="head"><span class="num">04</span><h3>UPI payment fraud</h3><span class="hi">UPI धोखा</span></div><p>"I sent you money by mistake, please return it." Collect requests and QR codes that take instead of give.</p></div>
-      <div class="item"><div class="head"><span class="num">05</span><h3>Investment and deepfake reels</h3><span class="hi">निवेश घोटाला</span></div><p>A celebrity deepfake promising guaranteed returns, WhatsApp trading groups, apps that never pay out.</p></div>
-      <div class="item"><div class="head"><span class="num">06</span><h3>Job, task and prize</h3><span class="hi">नौकरी और इनाम घोटाला</span></div><p>Easy tasks with small payouts first, then a deposit to unlock your earnings. Lotteries you never entered.</p></div>
-      <div class="item"><div class="head"><span class="num">07</span><h3>Loan-app extortion</h3><span class="hi">लोन ऐप धमकी</span></div><p>An instant loan, then harassment: morphed photos, threats to your contacts, demands that never end.</p></div>
-      <div class="item"><div class="head"><span class="num">08</span><h3>Family impersonation</h3><span class="hi">परिवार बनकर धोखा</span></div><p>"Mummy, my phone broke, this is my new number, send money urgently." Sometimes with a cloned voice.</p></div>
+      <div class="item"><div class="head"><span class="num">01</span><h3 data-i18n="fam1_t">डिजिटल अरेस्ट</h3><span class="gloss" data-i18n="fam1_g">Digital arrest</span></div><p data-i18n="fam1_d">वीडियो कॉल पर नक़ली CBI अफ़सर, गिरफ़्तारी वारंट, कॉल पर बने रहने और जमानत की रकम भेजने का दबाव।</p></div>
+      <div class="item"><div class="head"><span class="num">02</span><h3 data-i18n="fam2_t">कूरियर और पार्सल</h3><span class="gloss" data-i18n="fam2_g">Courier and parcel</span></div><p data-i18n="fam2_d">‘आपके पार्सल में ड्रग्स हैं।’ कस्टम का जुर्माना, पुलिस को कॉल ट्रांसफ़र, और अभी पैसे भरने का दबाव।</p></div>
+      <div class="item"><div class="head"><span class="num">03</span><h3 data-i18n="fam3_t">बैंक और सरकारी फ़िशिंग</h3><span class="gloss" data-i18n="fam3_g">Bank and official phishing</span></div><p data-i18n="fam3_d">KYC खत्म, PAN अपडेट, आज रात बिजली कटेगी। एक लिंक जो लगभग असली दिखता है।</p></div>
+      <div class="item"><div class="head"><span class="num">04</span><h3 data-i18n="fam4_t">UPI पेमेंट धोखा</h3><span class="gloss" data-i18n="fam4_g">UPI payment fraud</span></div><p data-i18n="fam4_d">‘मैंने ग़लती से पैसे भेज दिए, कृपया लौटा दीजिए।’ Collect request और QR कोड जो देने के बजाय लेते हैं।</p></div>
+      <div class="item"><div class="head"><span class="num">05</span><h3 data-i18n="fam5_t">निवेश और deepfake रील</h3><span class="gloss" data-i18n="fam5_g">Investment and deepfake reels</span></div><p data-i18n="fam5_d">guaranteed मुनाफ़े का वादा करता सेलिब्रिटी deepfake, WhatsApp trading ग्रुप, और ऐसे ऐप जो कभी पैसे नहीं देते।</p></div>
+      <div class="item"><div class="head"><span class="num">06</span><h3 data-i18n="fam6_t">नौकरी, टास्क और इनाम</h3><span class="gloss" data-i18n="fam6_g">Job, task and prize</span></div><p data-i18n="fam6_d">पहले आसान काम और छोटी कमाई, फिर कमाई ‘अनलॉक’ करने के लिए जमा माँगना। और ऐसी लॉटरी जिसमें आपने कभी हिस्सा नहीं लिया।</p></div>
+      <div class="item"><div class="head"><span class="num">07</span><h3 data-i18n="fam7_t">लोन ऐप वसूली</h3><span class="gloss" data-i18n="fam7_g">Loan-app extortion</span></div><p data-i18n="fam7_d">झटपट लोन, फिर परेशान करना: मॉर्फ़्ड फ़ोटो, आपके contacts को धमकी, और कभी न ख़त्म होने वाली वसूली।</p></div>
+      <div class="item"><div class="head"><span class="num">08</span><h3 data-i18n="fam8_t">परिवार बनकर धोखा</h3><span class="gloss" data-i18n="fam8_g">Family impersonation</span></div><p data-i18n="fam8_d">‘मम्मी, मेरा फ़ोन टूट गया, यह मेरा नया नंबर है, जल्दी पैसे भेजो।’ कभी-कभी नक़ली आवाज़ के साथ।</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>How it works</h2>
+    <h2 data-i18n="how_h2">यह कैसे काम करता है</h2>
     <div class="steps">
-      <div class="step"><span class="n">1</span><div><h3>Share what you received</h3><p>Paste the message, upload a screenshot (read on your device, never uploaded), or answer the live-call checklist.</p></div></div>
-      <div class="step"><span class="n">2</span><div><h3>The engine scores it</h3><p>48 signals across five dimensions: authority, fear, payment, channel, content. Twelve hard rules catch the unmistakable patterns; guards protect real messages from real banks.</p></div></div>
-      <div class="step"><span class="n">3</span><div><h3>Read the verdict and act</h3><p>Safe, Be Careful, or Danger, with reasons in plain English or Hindi and the exact next step, including when to call 1930.</p></div></div>
+      <div class="step"><span class="n">1</span><div><h3 data-i18n="step1_t">जो मिला वह डालिए</h3><p data-i18n="step1_d">मैसेज डालिए, स्क्रीनशॉट अपलोड कीजिए (जो आपके फ़ोन पर ही पढ़ा जाता है, कहीं अपलोड नहीं होता), या live-call checklist के सवालों के जवाब दीजिए।</p></div></div>
+      <div class="step"><span class="n">2</span><div><h3 data-i18n="step2_t">इंजन उसे परखता है</h3><p data-i18n="step2_d">पाँच पहलुओं पर 48 संकेत: authority, डर, पैसा, चैनल, और सामग्री। बारह सख़्त नियम साफ़ स्कैम पकड़ते हैं, और गार्ड असली बैंकों के असली मैसेज को बचाते हैं।</p></div></div>
+      <div class="step"><span class="n">3</span><div><h3 data-i18n="step3_t">नतीजा पढ़िए और कदम उठाइए</h3><p data-i18n="step3_d">सुरक्षित, सावधान, या ख़तरा, साथ में आसान हिंदी या अंग्रेज़ी में कारण और अगला सही कदम, यह भी कि 1930 पर कब कॉल करना है।</p></div></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Measured, not claimed</h2>
-    <p>Evaluated against <b>3,172 labeled messages</b> with a held-out golden set that shares nothing with the rest. Every number is reproduced by one command in the open repository.</p>
+    <h2 data-i18n="meas_h2">दावा नहीं, माप</h2>
+    <p data-i18n="meas_p"><b>3,172 लेबल किए गए मैसेज</b> पर परखा गया, एक अलग रखे गए golden सेट के साथ जो बाकी से कुछ भी साझा नहीं करता। हर आँकड़ा ओपन repository में एक कमांड से दोबारा निकाला जा सकता है।</p>
     <div class="results">
-      <div class="row"><span class="m">A scam is never rated Safe</span><span class="v">100%</span></div>
-      <div class="row"><span class="m">High-severity scams rated Danger</span><span class="v">92.9%</span></div>
-      <div class="row"><span class="m">False alarms on genuine messages</span><span class="v">0.0%</span></div>
+      <div class="row"><span class="m" data-i18n="res1_m">स्कैम को कभी सुरक्षित नहीं बताया जाता</span><span class="v">100%</span></div>
+      <div class="row"><span class="m" data-i18n="res2_m">गंभीर स्कैम को ख़तरा बताया गया</span><span class="v">92.9%</span></div>
+      <div class="row"><span class="m" data-i18n="res3_m">असली मैसेज पर झूठे अलार्म</span><span class="v">0.0%</span></div>
     </div>
-    <p class="results-note">The false-alarm rate is the number we guard hardest. A shield that cries wolf gets uninstalled, and then it protects no one.</p>
+    <p class="results-note" data-i18n="res_note">झूठे-अलार्म की दर वह आँकड़ा है जिसकी हम सबसे ज़्यादा रक्षा करते हैं। जो शील्ड बार-बार झूठा शोर मचाती है, लोग उसे हटा देते हैं, और फिर वह किसी की रक्षा नहीं करती।</p>
     <div class="limits">
-      <p><b>Honest limits.</b> JaanchLo is a second opinion, not a guarantee. It cannot see who is really calling, and new scam scripts appear every month. When in doubt: do not pay, hang up, call 1930.</p>
+      <p data-i18n="limits_p"><b>ईमानदार सीमाएँ।</b> JaanchLo एक दूसरी राय है, गारंटी नहीं। यह नहीं देख सकता कि असल में कौन कॉल कर रहा है, और नए स्कैम हर महीने आते हैं। शक हो तो: पैसे न दें, फ़ोन काटें, 1930 पर कॉल करें।</p>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Nothing leaves your phone</h2>
+    <h2 data-i18n="priv_h2">कुछ भी आपके फ़ोन से बाहर नहीं जाता</h2>
     <ul class="plain-list">
-      <li><b>No account.</b> No sign-up, no phone number, no OTP. Open it and use it.</li>
-      <li><b>On-device analysis.</b> The engine runs in your browser. Screenshots are read locally. No server stores your messages.</li>
-      <li><b>Verified by tests.</b> The reference API neither logs request bodies nor writes them to disk. An automated test enforces that claim.</li>
+      <li data-i18n="priv1"><b>कोई अकाउंट नहीं।</b> कोई साइनअप नहीं, कोई फ़ोन नंबर नहीं, कोई OTP नहीं। खोलिए और इस्तेमाल कीजिए।</li>
+      <li data-i18n="priv2"><b>फ़ोन पर ही विश्लेषण।</b> इंजन आपके browser में चलता है। स्क्रीनशॉट वहीं पढ़े जाते हैं। कोई सर्वर आपके मैसेज नहीं रखता।</li>
+      <li data-i18n="priv3"><b>टेस्ट से प्रमाणित।</b> reference API न request का डेटा लॉग करता है, न डिस्क पर लिखता है। एक ऑटोमेटेड टेस्ट इसे लागू करता है।</li>
     </ul>
   </div>
 </section>
 
 <section id="share">
   <div class="wrap">
-    <h2>Share it with family and friends</h2>
-    <p>The people who most need this are the least likely to find it on their own. Send it to your family group. It is free, with no ads and no sign-up. Sharing it is the whole point.</p>
-    <a class="cta" href="https://wa.me/?text=Suspicious%20message%3F%20Check%20it%20first%20with%20JaanchLo%2C%20a%20free%20scam%20shield%20for%20Indian%20families.%20English%2C%20Hindi%2C%20Hinglish.%20%E0%A4%B6%E0%A4%95%20%E0%A4%B9%E0%A5%8B%20%E0%A4%A4%E0%A5%8B%20%E0%A4%AA%E0%A4%B9%E0%A4%B2%E0%A5%87%20%E0%A4%9C%E0%A4%BE%E0%A4%82%E0%A4%9A%20%E0%A4%B2%E0%A5%8B%E0%A5%A4%20https%3A%2F%2Fjaanchlo.regnor.systems" target="_blank" rel="noopener noreferrer" onclick="if(navigator.share){navigator.share({title:'JaanchLo',text:'Suspicious message? Check it first with JaanchLo, a free scam shield for Indian families. शक हो तो पहले जांच लो।',url:'https://jaanchlo.regnor.systems'});return false;}">Share JaanchLo</a>
+    <h2 data-i18n="share_h2">परिवार और दोस्तों को भेजिए</h2>
+    <p data-i18n="share_p">जिन्हें इसकी सबसे ज़्यादा ज़रूरत है, वही इसे ख़ुद सबसे कम ढूँढ पाते हैं। इसे अपने family group में भेजिए। यह मुफ़्त है, कोई विज्ञापन नहीं, कोई साइनअप नहीं। इसे बाँटना ही असली मक़सद है।</p>
+    <a class="cta" href="https://wa.me/?text=%E0%A4%95%E0%A5%8B%E0%A4%88%20%E0%A4%B6%E0%A4%95%20%E0%A4%B5%E0%A4%BE%E0%A4%B2%E0%A4%BE%20%E0%A4%AE%E0%A5%88%E0%A4%B8%E0%A5%87%E0%A4%9C%3F%20%E0%A4%AA%E0%A4%B9%E0%A4%B2%E0%A5%87%20JaanchLo%20%E0%A4%B8%E0%A5%87%20%E0%A4%9C%E0%A4%BE%E0%A4%81%E0%A4%9A%E0%A4%BF%E0%A4%8F%E0%A5%A4%20%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4%E0%A5%80%E0%A4%AF%20%E0%A4%AA%E0%A4%B0%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%AE%E0%A5%81%E0%A4%AB%E0%A4%BC%E0%A5%8D%E0%A4%A4%20%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A5%88%E0%A4%AE%20%E0%A4%B6%E0%A5%80%E0%A4%B2%E0%A5%8D%E0%A4%A1%E0%A5%A4%20https%3A%2F%2Fjaanchlo.regnor.systems" target="_blank" rel="noopener noreferrer" onclick="if(navigator.share){navigator.share({title:'JaanchLo',text:'कोई शक वाला मैसेज? पहले JaanchLo से जाँचिए। भारतीय परिवारों के लिए मुफ़्त स्कैम शील्ड, हिंदी और English में।',url:'https://jaanchlo.regnor.systems'});return false;}" data-i18n="share_cta">JaanchLo साझा करें</a>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Open source, open data</h2>
-    <p>The detector, the scoring rubric, the 3,172-row English, Hindi and Hinglish scam corpus, the tests, and the CI gate are all public. Nothing like this dataset existed openly before. Fork it, audit it, improve it.</p>
+    <h2 data-i18n="os_h2">ओपन सोर्स, ओपन डेटा</h2>
+    <p data-i18n="os_p">detector, scoring rubric, 3,172-पंक्ति का अंग्रेज़ी, हिंदी और Hinglish स्कैम corpus, टेस्ट, और CI gate सब सार्वजनिक हैं। ऐसा डेटासेट पहले खुले तौर पर मौजूद नहीं था। इसे fork कीजिए, जाँचिए, बेहतर बनाइए।</p>
     <div class="btn-line">
-      <a class="btn-outline" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-      <a class="btn-outline" href="https://github.com/Romil10/jaanchlo/blob/main/dataset/DATASET_CARD.md" target="_blank" rel="noopener noreferrer">Dataset card</a>
+      <a class="btn-outline" href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer" data-i18n="os_btn1">GitHub पर देखें</a>
+      <a class="btn-outline" href="https://github.com/Romil10/jaanchlo/blob/main/dataset/DATASET_CARD.md" target="_blank" rel="noopener noreferrer" data-i18n="os_btn2">डेटासेट कार्ड</a>
     </div>
-    <p class="lic">Code <code>AGPL-3.0</code> · Dataset <code>CC-BY-4.0</code> · Model, when it ships, <code>Apache-2.0</code></p>
+    <p class="lic" data-i18n="os_lic">कोड <code>AGPL-3.0</code> · डेटासेट <code>CC-BY-4.0</code> · मॉडल, जब आएगा, <code>Apache-2.0</code></p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="help-label">Being scammed right now? Hang up. Call</div>
+    <div class="help-label" data-i18n="foot_label">अभी scam हो रहा है? फ़ोन काटिए। कॉल कीजिए</div>
     <div class="helpline">1930</div>
-    <p class="help-sub">The national cyber-fraud helpline. Also report at <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color:#fff">cybercrime.gov.in</a>. No real police officer arrests anyone over a video call.</p>
+    <p class="help-sub" data-i18n="foot_sub">राष्ट्रीय साइबर-फ्रॉड हेल्पलाइन। यहाँ भी रिपोर्ट करें <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color:#fff">cybercrime.gov.in</a>। कोई असली पुलिस अफ़सर वीडियो कॉल पर किसी को गिरफ़्तार नहीं करता।</p>
     <div class="links">
-      <a href="app/jaanchlo_app.html">Open the app</a>
-      <a href="#share">Share JaanchLo</a>
-      <a href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer">Source code</a>
-      <a href="https://github.com/Romil10/jaanchlo/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
+      <a href="app/jaanchlo_app.html" data-i18n="link_open">ऐप खोलें</a>
+      <a href="#share" data-i18n="link_share">साझा करें</a>
+      <a href="https://github.com/Romil10/jaanchlo" target="_blank" rel="noopener noreferrer" data-i18n="link_source">सोर्स कोड</a>
+      <a href="https://github.com/Romil10/jaanchlo/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer" data-i18n="link_roadmap">रोडमैप</a>
     </div>
-    <div class="base">JaanchLo (जांच लो, "check it first") is a free public-good project by <a href="https://regnor.systems" target="_blank" rel="noopener noreferrer">Regnor</a>, Bengaluru. No ads, no tracking, no account. A second opinion, not a guarantee.</div>
+    <div class="base" data-i18n="foot_base">JaanchLo (जांच लो, "पहले जांच लो") <a href="https://regnor.systems" target="_blank" rel="noopener noreferrer">Regnor</a>, बेंगलुरु का एक मुफ़्त public-good प्रोजेक्ट है। कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं, कोई अकाउंट नहीं। एक दूसरी राय, गारंटी नहीं।</div>
   </div>
 </footer>
+
+<script>
+  const I18N = {
+    en: {
+      hero_h1: `Suspicious message?<br>Check it first.`,
+      hero_sub: `शक हो तो पहले जांच लो।`,
+      hero_p: `A free scam shield for Indian elders and their families. Paste the message, upload a screenshot, or answer a few questions. Get a plain answer: what it is, why it is suspicious, and what to do next.`,
+      cta_open: `Open JaanchLo`,
+      meta_line: `Free · No account · English / हिंदी / Hinglish`,
+      verdicts_label: `It answers with one of three words`,
+      v_safe_name: `Safe`, v_safe_desc: `Nothing suspicious found. Go ahead.`,
+      v_care_name: `Be Careful`, v_care_desc: `Some warning signs. Verify before you act.`,
+      v_danger_name: `Danger`, v_danger_desc: `Strong scam pattern. Do not pay, do not share OTP.`,
+      why_h2: `Why this exists`,
+      why_p: `Digital-arrest scams alone took an estimated <b>Rs 1,935 crore</b> from Indians in 2024, and victims are disproportionately elderly. Most scam checkers are English-first, cloud-dependent, and blind to the patterns that actually hit Indian phones. JaanchLo is built for exactly that gap: it knows the Indian scripts, reads Hindi and Hinglish, and runs entirely on your device.`,
+      detect_h2: `What it detects`,
+      detect_p: `Eight scam families, learned from Indian cyber-fraud advisories and reported cases.`,
+      fam1_t: `Digital arrest`, fam1_g: `डिजिटल अरेस्ट`, fam1_d: `"CBI officer" on a video call, an arrest warrant, demands to stay on the line and pay a deposit.`,
+      fam2_t: `Courier and parcel`, fam2_g: `कूरियर धोखा`, fam2_d: `"Your parcel has drugs in it." A customs fine, a police transfer, pressure to pay now.`,
+      fam3_t: `Bank and official phishing`, fam3_g: `बैंक फ़िशिंग`, fam3_d: `KYC expiry, PAN update, electricity cut tonight. A link that looks almost official.`,
+      fam4_t: `UPI payment fraud`, fam4_g: `UPI धोखा`, fam4_d: `"I sent you money by mistake, please return it." Collect requests and QR codes that take instead of give.`,
+      fam5_t: `Investment and deepfake reels`, fam5_g: `निवेश घोटाला`, fam5_d: `A celebrity deepfake promising guaranteed returns, WhatsApp trading groups, apps that never pay out.`,
+      fam6_t: `Job, task and prize`, fam6_g: `नौकरी और इनाम घोटाला`, fam6_d: `Easy tasks with small payouts first, then a deposit to unlock your earnings. Lotteries you never entered.`,
+      fam7_t: `Loan-app extortion`, fam7_g: `लोन ऐप धमकी`, fam7_d: `An instant loan, then harassment: morphed photos, threats to your contacts, demands that never end.`,
+      fam8_t: `Family impersonation`, fam8_g: `परिवार बनकर धोखा`, fam8_d: `"Mummy, my phone broke, this is my new number, send money urgently." Sometimes with a cloned voice.`,
+      how_h2: `How it works`,
+      step1_t: `Share what you received`, step1_d: `Paste the message, upload a screenshot (read on your device, never uploaded), or answer the live-call checklist.`,
+      step2_t: `The engine scores it`, step2_d: `48 signals across five dimensions: authority, fear, payment, channel, content. Twelve hard rules catch the unmistakable patterns; guards protect real messages from real banks.`,
+      step3_t: `Read the verdict and act`, step3_d: `Safe, Be Careful, or Danger, with reasons in plain English or Hindi and the exact next step, including when to call 1930.`,
+      meas_h2: `Measured, not claimed`,
+      meas_p: `Evaluated against <b>3,172 labeled messages</b> with a held-out golden set that shares nothing with the rest. Every number is reproduced by one command in the open repository.`,
+      res1_m: `A scam is never rated Safe`, res2_m: `High-severity scams rated Danger`, res3_m: `False alarms on genuine messages`,
+      res_note: `The false-alarm rate is the number we guard hardest. A shield that cries wolf gets uninstalled, and then it protects no one.`,
+      limits_p: `<b>Honest limits.</b> JaanchLo is a second opinion, not a guarantee. It cannot see who is really calling, and new scam scripts appear every month. When in doubt: do not pay, hang up, call 1930.`,
+      priv_h2: `Nothing leaves your phone`,
+      priv1: `<b>No account.</b> No sign-up, no phone number, no OTP. Open it and use it.`,
+      priv2: `<b>On-device analysis.</b> The engine runs in your browser. Screenshots are read locally. No server stores your messages.`,
+      priv3: `<b>Verified by tests.</b> The reference API neither logs request bodies nor writes them to disk. An automated test enforces that claim.`,
+      share_h2: `Share it with family and friends`,
+      share_p: `The people who most need this are the least likely to find it on their own. Send it to your family group. It is free, with no ads and no sign-up. Sharing it is the whole point.`,
+      share_cta: `Share JaanchLo`,
+      os_h2: `Open source, open data`,
+      os_p: `The detector, the scoring rubric, the 3,172-row English, Hindi and Hinglish scam corpus, the tests, and the CI gate are all public. Nothing like this dataset existed openly before. Fork it, audit it, improve it.`,
+      os_btn1: `View on GitHub`, os_btn2: `Dataset card`,
+      os_lic: `Code <code>AGPL-3.0</code> · Dataset <code>CC-BY-4.0</code> · Model, when it ships, <code>Apache-2.0</code>`,
+      foot_label: `Being scammed right now? Hang up. Call`,
+      foot_sub: `The national cyber-fraud helpline. Also report at <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color:#fff">cybercrime.gov.in</a>. No real police officer arrests anyone over a video call.`,
+      link_open: `Open the app`, link_share: `Share JaanchLo`, link_source: `Source code`, link_roadmap: `Roadmap`,
+      foot_base: `JaanchLo (जांच लो, "check it first") is a free public-good project by <a href="https://regnor.systems" target="_blank" rel="noopener noreferrer">Regnor</a>, Bengaluru. No ads, no tracking, no account. A second opinion, not a guarantee.`
+    },
+    hi: {
+      hero_h1: `कोई शक वाला मैसेज?<br>पहले जांच लो।`,
+      hero_sub: `Suspicious message? Check it first.`,
+      hero_p: `भारतीय बुज़ुर्गों और उनके परिवारों के लिए एक मुफ़्त स्कैम शील्ड। मैसेज डालिए, स्क्रीनशॉट अपलोड कीजिए, या कुछ सवालों के जवाब दीजिए। आसान भाषा में जवाब पाइए: यह क्या है, इसमें शक क्यों है, और अब क्या करना है।`,
+      cta_open: `JaanchLo खोलें`,
+      meta_line: `मुफ़्त · कोई अकाउंट नहीं · हिंदी / English / Hinglish`,
+      verdicts_label: `यह तीन में से एक शब्द में जवाब देता है`,
+      v_safe_name: `सुरक्षित`, v_safe_desc: `कुछ भी संदिग्ध नहीं मिला। आगे बढ़ें।`,
+      v_care_name: `सावधान`, v_care_desc: `कुछ चेतावनी के संकेत हैं। कुछ भी करने से पहले जाँच लें।`,
+      v_danger_name: `ख़तरा`, v_danger_desc: `पक्का स्कैम पैटर्न। पैसे न भेजें, OTP न बताएं।`,
+      why_h2: `यह क्यों बनाया`,
+      why_p: `अकेले digital-arrest स्कैम ने 2024 में भारतीयों से करीब <b>1,935 करोड़ रुपये</b> ठगे, और सबसे ज़्यादा शिकार बुज़ुर्ग बने। ज़्यादातर स्कैम-checker अंग्रेज़ी-पहले हैं, cloud पर निर्भर हैं, और उन तरीक़ों को नहीं पहचानते जो असल में भारतीय फ़ोन पर आते हैं। JaanchLo ठीक इसी कमी के लिए बना है: यह भारतीय पैटर्न पहचानता है, हिंदी और Hinglish पढ़ता है, और पूरी तरह आपके फ़ोन पर चलता है।`,
+      detect_h2: `यह क्या पकड़ता है`,
+      detect_p: `आठ तरह के स्कैम, जो भारतीय साइबर-फ्रॉड सलाह और रिपोर्ट किए गए मामलों से सीखे गए हैं।`,
+      fam1_t: `डिजिटल अरेस्ट`, fam1_g: `Digital arrest`, fam1_d: `वीडियो कॉल पर नक़ली CBI अफ़सर, गिरफ़्तारी वारंट, कॉल पर बने रहने और जमानत की रकम भेजने का दबाव।`,
+      fam2_t: `कूरियर और पार्सल`, fam2_g: `Courier and parcel`, fam2_d: `‘आपके पार्सल में ड्रग्स हैं।’ कस्टम का जुर्माना, पुलिस को कॉल ट्रांसफ़र, और अभी पैसे भरने का दबाव।`,
+      fam3_t: `बैंक और सरकारी फ़िशिंग`, fam3_g: `Bank and official phishing`, fam3_d: `KYC खत्म, PAN अपडेट, आज रात बिजली कटेगी। एक लिंक जो लगभग असली दिखता है।`,
+      fam4_t: `UPI पेमेंट धोखा`, fam4_g: `UPI payment fraud`, fam4_d: `‘मैंने ग़लती से पैसे भेज दिए, कृपया लौटा दीजिए।’ Collect request और QR कोड जो देने के बजाय लेते हैं।`,
+      fam5_t: `निवेश और deepfake रील`, fam5_g: `Investment and deepfake reels`, fam5_d: `guaranteed मुनाफ़े का वादा करता सेलिब्रिटी deepfake, WhatsApp trading ग्रुप, और ऐसे ऐप जो कभी पैसे नहीं देते।`,
+      fam6_t: `नौकरी, टास्क और इनाम`, fam6_g: `Job, task and prize`, fam6_d: `पहले आसान काम और छोटी कमाई, फिर कमाई ‘अनलॉक’ करने के लिए जमा माँगना। और ऐसी लॉटरी जिसमें आपने कभी हिस्सा नहीं लिया।`,
+      fam7_t: `लोन ऐप वसूली`, fam7_g: `Loan-app extortion`, fam7_d: `झटपट लोन, फिर परेशान करना: मॉर्फ़्ड फ़ोटो, आपके contacts को धमकी, और कभी न ख़त्म होने वाली वसूली।`,
+      fam8_t: `परिवार बनकर धोखा`, fam8_g: `Family impersonation`, fam8_d: `‘मम्मी, मेरा फ़ोन टूट गया, यह मेरा नया नंबर है, जल्दी पैसे भेजो।’ कभी-कभी नक़ली आवाज़ के साथ।`,
+      how_h2: `यह कैसे काम करता है`,
+      step1_t: `जो मिला वह डालिए`, step1_d: `मैसेज डालिए, स्क्रीनशॉट अपलोड कीजिए (जो आपके फ़ोन पर ही पढ़ा जाता है, कहीं अपलोड नहीं होता), या live-call checklist के सवालों के जवाब दीजिए।`,
+      step2_t: `इंजन उसे परखता है`, step2_d: `पाँच पहलुओं पर 48 संकेत: authority, डर, पैसा, चैनल, और सामग्री। बारह सख़्त नियम साफ़ स्कैम पकड़ते हैं, और गार्ड असली बैंकों के असली मैसेज को बचाते हैं।`,
+      step3_t: `नतीजा पढ़िए और कदम उठाइए`, step3_d: `सुरक्षित, सावधान, या ख़तरा, साथ में आसान हिंदी या अंग्रेज़ी में कारण और अगला सही कदम, यह भी कि 1930 पर कब कॉल करना है।`,
+      meas_h2: `दावा नहीं, माप`,
+      meas_p: `<b>3,172 लेबल किए गए मैसेज</b> पर परखा गया, एक अलग रखे गए golden सेट के साथ जो बाकी से कुछ भी साझा नहीं करता। हर आँकड़ा ओपन repository में एक कमांड से दोबारा निकाला जा सकता है।`,
+      res1_m: `स्कैम को कभी सुरक्षित नहीं बताया जाता`, res2_m: `गंभीर स्कैम को ख़तरा बताया गया`, res3_m: `असली मैसेज पर झूठे अलार्म`,
+      res_note: `झूठे-अलार्म की दर वह आँकड़ा है जिसकी हम सबसे ज़्यादा रक्षा करते हैं। जो शील्ड बार-बार झूठा शोर मचाती है, लोग उसे हटा देते हैं, और फिर वह किसी की रक्षा नहीं करती।`,
+      limits_p: `<b>ईमानदार सीमाएँ।</b> JaanchLo एक दूसरी राय है, गारंटी नहीं। यह नहीं देख सकता कि असल में कौन कॉल कर रहा है, और नए स्कैम हर महीने आते हैं। शक हो तो: पैसे न दें, फ़ोन काटें, 1930 पर कॉल करें।`,
+      priv_h2: `कुछ भी आपके फ़ोन से बाहर नहीं जाता`,
+      priv1: `<b>कोई अकाउंट नहीं।</b> कोई साइनअप नहीं, कोई फ़ोन नंबर नहीं, कोई OTP नहीं। खोलिए और इस्तेमाल कीजिए।`,
+      priv2: `<b>फ़ोन पर ही विश्लेषण।</b> इंजन आपके browser में चलता है। स्क्रीनशॉट वहीं पढ़े जाते हैं। कोई सर्वर आपके मैसेज नहीं रखता।`,
+      priv3: `<b>टेस्ट से प्रमाणित।</b> reference API न request का डेटा लॉग करता है, न डिस्क पर लिखता है। एक ऑटोमेटेड टेस्ट इसे लागू करता है।`,
+      share_h2: `परिवार और दोस्तों को भेजिए`,
+      share_p: `जिन्हें इसकी सबसे ज़्यादा ज़रूरत है, वही इसे ख़ुद सबसे कम ढूँढ पाते हैं। इसे अपने family group में भेजिए। यह मुफ़्त है, कोई विज्ञापन नहीं, कोई साइनअप नहीं। इसे बाँटना ही असली मक़सद है।`,
+      share_cta: `JaanchLo साझा करें`,
+      os_h2: `ओपन सोर्स, ओपन डेटा`,
+      os_p: `detector, scoring rubric, 3,172-पंक्ति का अंग्रेज़ी, हिंदी और Hinglish स्कैम corpus, टेस्ट, और CI gate सब सार्वजनिक हैं। ऐसा डेटासेट पहले खुले तौर पर मौजूद नहीं था। इसे fork कीजिए, जाँचिए, बेहतर बनाइए।`,
+      os_btn1: `GitHub पर देखें`, os_btn2: `डेटासेट कार्ड`,
+      os_lic: `कोड <code>AGPL-3.0</code> · डेटासेट <code>CC-BY-4.0</code> · मॉडल, जब आएगा, <code>Apache-2.0</code>`,
+      foot_label: `अभी scam हो रहा है? फ़ोन काटिए। कॉल कीजिए`,
+      foot_sub: `राष्ट्रीय साइबर-फ्रॉड हेल्पलाइन। यहाँ भी रिपोर्ट करें <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color:#fff">cybercrime.gov.in</a>। कोई असली पुलिस अफ़सर वीडियो कॉल पर किसी को गिरफ़्तार नहीं करता।`,
+      link_open: `ऐप खोलें`, link_share: `साझा करें`, link_source: `सोर्स कोड`, link_roadmap: `रोडमैप`,
+      foot_base: `JaanchLo (जांच लो, "पहले जांच लो") <a href="https://regnor.systems" target="_blank" rel="noopener noreferrer">Regnor</a>, बेंगलुरु का एक मुफ़्त public-good प्रोजेक्ट है। कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं, कोई अकाउंट नहीं। एक दूसरी राय, गारंटी नहीं।`
+    }
+  };
+  function setLang(l){
+    if(l!=='hi'&&l!=='en') l='hi';
+    document.documentElement.lang = l;
+    const dict = I18N[l];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      const k = el.getAttribute('data-i18n');
+      if(dict[k]!==undefined) el.innerHTML = dict[k];
+    });
+    const hb=document.getElementById('lang-hi'), eb=document.getElementById('lang-en');
+    if(hb) hb.classList.toggle('on', l==='hi');
+    if(eb) eb.classList.toggle('on', l==='en');
+    try{ localStorage.setItem('jl_lang', l); }catch(e){}
+  }
+  (function(){
+    let saved='hi';
+    try{ saved = localStorage.getItem('jl_lang') || 'hi'; }catch(e){}
+    setLang(saved);
+  })();
+</script>
 
 </body>
 </html>
