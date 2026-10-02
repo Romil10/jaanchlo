@@ -94,10 +94,21 @@ Does the content itself look manufactured?
 - K3: content.otp_request from any unsolicited contact
 - K4: pay.qr_to_receive in a receiving context
 - K5: fear.shame_threat + any payment demand
+- K6 to K12: see detect() in app/jaanchlo_app.html (family impersonation, digital arrest, prize fee, screen share, new-number family, authority isolation payment, guaranteed returns with a tax to withdraw)
+- K13: institution (bank, utility, government, police, court, courier) + threat (block, case, arrest) + action (link, mobile number, keypad prompt, app, screen share, OTP)
+- K14: pay to receive (fee, tax or task deposit) + a gain (prize, earnings, loan, withdrawal, returns, job)
+- K15: money "sent by mistake" + a payment ask, urgency or kinship claim
+- K16: courier + criminal case, police or arrest
+- K17: guaranteed returns + group, app, crypto or an invitation to invest
+- K18: recruiter + per-task or daily pay
+- K19: police or court + case or arrest + any payment
+- K20: photo-shaming + loan or payment
 
 **False-positive guards (protect benign class):**
 - G1: Danger requires signals from at least 2 different evaluations (knockouts exempt).
 - G2: presence of personalization (name, consumer ID, masked account) + official sender + no link/callback demand caps verdict at Be Careful unless a knockout fires.
+- G4 (v0.3): a kinship word (beta, papa, uncle) only counts as a signal alongside money, urgency, secrecy or a new number.
+- G5 (v0.3): a genuine transaction alert (masked account or consumer ID, no threat, no link or callback, no payment ask beyond naming UPI) is rated Safe.
 - G3: family money requests with no new-number/voice-clone/isolation signals cap at Be Careful with a "verify by calling their saved number" tip.
 
 ## Output contract (every verdict)

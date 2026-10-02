@@ -14,7 +14,7 @@ A free, open-source scam shield for Indian elders and their families. Paste a me
 Digital-arrest scams alone took an estimated **Rs 1,935 crore** from Indians in 2024 (123,672 cases); total cybercrime losses hit **Rs 22,845 crore**, and victims are disproportionately elderly. The everyday defense today is awareness posters and a helpline. Existing open-source scam detectors are hackathon-grade, English-first, cloud-dependent, and blind to India-specific patterns like digital arrest, UPI tricks, and deepfake investment reels. JaanchLo is built for exactly that gap.
 
 ## What it does
-The **SREM engine** (Scam Risk Evaluation Model) scores a message across five dimensions (Authority, Fear, Payment, Channel, Content) over 48 signals, applies 12 hard "knockout" rules and false-alarm guards, then returns one of three elder-simple verdicts with plain-language reasons:
+The **SREM engine** (Scam Risk Evaluation Model) scores a message across five dimensions (Authority, Fear, Payment, Channel, Content) over 48 signals, applies 20 hard "knockout" rules and false-alarm guards, then returns one of three elder-simple verdicts with plain-language reasons:
 
 - 🟢 **Safe** · 🟠 **Be Careful** · 🔴 **Danger**
 
@@ -39,10 +39,21 @@ Evaluated against a 3,172-row labeled dataset with a 252-row golden holdout that
 | Metric | Golden | Overall |
 |---|---|---|
 | Scam recall (never rated Safe) | 100% | 100% |
-| High-severity recall (rated Danger) | 100% | 92.9% |
+| High-severity recall (rated Danger) | 100% | 95.7% |
 | Benign false-danger rate | 0.0% | 0.0% |
 
 The false-danger rate is the metric we guard hardest: a shield that cries wolf gets uninstalled.
+
+### Real-world wording check (v0.3)
+Template-based datasets flatter a rule engine, because the rules end up fitted to the template phrasing. In October 2026 we wrote three independent batches of everyday messages (bank alerts, family chats, delivery updates, and scams in each family, in English, Hindi and Hinglish) and scored each batch **before** changing any rule. These are hand-written examples, not field data. See [dataset/REALWORLD.md](dataset/REALWORLD.md).
+
+| Unseen batch, scored before any tuning | Scams never Safe | Clear scams rated Danger | Genuine messages rated Danger |
+|---|---|---|---|
+| Batch 1 on the v0.2 engine (36 scams, 25 genuine) | 33/36 | 11/31 (35%) | 0 |
+| Batch 2 on v0.3 (18 scams, 12 genuine); v0.2 scored 3/16 | 16/18 | 11/16 (69%) | 0 |
+| Batch 3 on v0.3 (10 scams, 6 genuine) | 8/10 | 6/9 (67%) | 0 |
+
+All three batches now live in `dataset/realworld.jsonl` and are gated in CI (every scam not Safe, Danger recall at least 90%, zero genuine messages rated Danger). Because the rules were improved using these batches, the gated figures are a regression floor, not an estimate of accuracy on new wording; the "before tuning" rows above are the honest estimate.
 
 ## Repository layout
 ```

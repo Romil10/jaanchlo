@@ -1,0 +1,107 @@
+{"id":"rw-s01","label":"scam","expect":"danger","family":"official_phishing","text":"Dear customer your SBI account will be blocked today. Update KYC immediately at http://bit.ly/sbi-kyc12"}
+{"id":"rw-s02","label":"scam","expect":"danger","family":"official_phishing","text":"HDFC Bank: Your NetBanking access is suspended due to incomplete PAN linking. Click https://hdfc-kyc-update.top/verify to reactivate within 24 hours."}
+{"id":"rw-s03","label":"scam","expect":"danger","family":"official_phishing","text":"Dear Consumer, your electricity power will be disconnected tonight at 9.30 pm because previous month bill was not update. Please contact electricity officer 9876543210 immediately."}
+{"id":"rw-s04","label":"scam","expect":"danger","family":"official_phishing","text":"Your SIM card will be deactivated in 2 hours as per TRAI. To continue, press 9 or call our executive."}
+{"id":"rw-s05","label":"scam","expect":"care","family":"official_phishing","text":"Income Tax Dept: You are eligible for a refund of Rs 15,490. Submit your bank details at incometax-refund.info to receive the amount."}
+{"id":"rw-s06","label":"scam","expect":"danger","family":"official_phishing","text":"Your Paytm KYC has expired. Your wallet will be closed. Our executive will call, please share the OTP you receive to complete verification."}
+{"id":"rw-s07","label":"scam","expect":"danger","family":"job_task","text":"Hello sir, part time job from home. Like YouTube videos and earn Rs 3000 daily. First task free, then pay Rs 500 deposit to unlock VIP tasks. Join telegram group"}
+{"id":"rw-s08","label":"scam","expect":"danger","family":"job_task","text":"Hi, I am Priya from Amazon HR. We are hiring for online rating job, Rs 150 per review, salary paid daily. Interested? Reply YES on WhatsApp."}
+{"id":"rw-s09","label":"scam","expect":"danger","family":"job_task","text":"Your task score is low. To withdraw your earnings of Rs 18,400 you must complete the remaining merchant task by recharging Rs 9,000. Funds will be returned with commission."}
+{"id":"rw-s10","label":"scam","expect":"danger","family":"job_task","text":"Congratulations! You are selected for Data Entry work from home. Pay registration fee of Rs 1,999 to get your ID and start earning."}
+{"id":"rw-s11","label":"scam","expect":"danger","family":"courier_parcel","text":"This is FedEx. A parcel in your name contains illegal drugs. Press 1 to speak to Mumbai customs officer"}
+{"id":"rw-s12","label":"scam","expect":"danger","family":"courier_parcel","text":"DHL Express: Your package from Taiwan has been seized by customs. It contains 5 passports and MDMA. Your call is being transferred to Mumbai Police cyber cell."}
+{"id":"rw-s13","label":"scam","expect":"care","family":"courier_parcel","text":"India Post: Your parcel could not be delivered due to incomplete address. Update your address here within 24 hours: https://indiapost-track.xyz"}
+{"id":"rw-s14","label":"scam","expect":"danger","family":"upi_payment_fraud","text":"Rs 5000 credited by mistake to your account, please scan this QR and enter UPI PIN to return it"}
+{"id":"rw-s15","label":"scam","expect":"danger","family":"upi_payment_fraud","text":"Sir I am buying your sofa from OLX. I am army officer, I have sent you a payment request, just approve and enter your PIN, you will receive Rs 12,000."}
+{"id":"rw-s16","label":"scam","expect":"danger","family":"upi_payment_fraud","text":"bhaiya galti se aapke account me 2000 chale gaye, please wapas bhej do is number pe, bahut urgent hai"}
+{"id":"rw-s17","label":"scam","expect":"danger","family":"digital_arrest","text":"I am Inspector Sharma from CBI. Your Aadhaar is linked to a money laundering case. Stay on this video call and do not tell anyone or you will be arrested."}
+{"id":"rw-s18","label":"scam","expect":"danger","family":"digital_arrest","text":"This is a notice from the Supreme Court. An arrest warrant has been issued in your name. To clear your name transfer the amount to the RBI verification account, it is fully refundable."}
+{"id":"rw-s19","label":"scam","expect":"danger","family":"digital_arrest","text":"Mumbai police: aapke naam pe FIR hai. Skype pe video call join karo abhi, statement dena hoga, kisi ko mat batana."}
+{"id":"rw-s20","label":"scam","expect":"danger","family":"investment_trading","text":"Join our VIP stock tips group on WhatsApp. Guaranteed 30% profit every week, IPO allotment assured. Limited seats, invest now through our app."}
+{"id":"rw-s21","label":"scam","expect":"danger","family":"investment_trading","text":"Your profit of Rs 4,80,000 is ready. To withdraw, first pay 10% service tax. Funds will be released immediately after payment."}
+{"id":"rw-s22","label":"scam","expect":"care","family":"investment_trading","text":"Earn 2% daily on your crypto with our AI trading bot. Send USDT to the wallet address below to start."}
+{"id":"rw-s23","label":"scam","expect":"danger","family":"impersonation_relationship","text":"Papa my phone is broken, this is my friend's number. I am in trouble, please send Rs 25,000 urgently on this UPI. Don't tell mummy."}
+{"id":"rw-s24","label":"scam","expect":"danger","family":"impersonation_relationship","text":"मम्मी मेरा फ़ोन खराब है, ये नया नंबर है। बहुत ज़रूरी है, अभी 20000 इस UPI पर भेज दो, किसी को मत बताना"}
+{"id":"rw-s25","label":"scam","expect":"danger","family":"impersonation_relationship","text":"Uncle I met with an accident near the highway, I am in hospital, please send money for the operation on this number, very urgent."}
+{"id":"rw-s26","label":"scam","expect":"danger","family":"loan_app","text":"You have not repaid your loan. Pay Rs 6,500 today or we will send your morphed photos to all your contacts."}
+{"id":"rw-s27","label":"scam","expect":"danger","family":"loan_app","text":"Instant loan of Rs 2 lakh approved without documents. Pay processing fee of Rs 2,999 to release your loan amount."}
+{"id":"rw-s28","label":"scam","expect":"danger","family":"job_task","text":"Congratulations! You won Rs 25 lakh in the KBC lucky draw. To claim your prize pay GST of Rs 12,500 to the given account."}
+{"id":"rw-s29","label":"scam","expect":"danger","family":"official_phishing","text":"Your bank account will be frozen. Our support team will help you, please install AnyDesk and share the code with our officer."}
+{"id":"rw-s30","label":"scam","expect":"danger","family":"official_phishing","text":"Electricity bill due. Download the BSES bill update app from this link to avoid disconnection: http://bses-pay.club/app.apk"}
+{"id":"rw-s31","label":"scam","expect":"care","family":"job_task","text":"Hello! I saw your profile. We have a remote job, 1-2 hours a day, earn 5000-8000 per day. Contact me on WhatsApp for details."}
+{"id":"rw-s32","label":"scam","expect":"danger","family":"upi_payment_fraud","text":"Congratulations, you have received a cashback of Rs 1,500. Scan the QR code and enter your UPI PIN to claim it now."}
+{"id":"rw-s33","label":"scam","expect":"danger","family":"official_phishing","text":"Dear user, your Aadhaar will be suspended today. Call 7845123690 immediately to avoid legal action."}
+{"id":"rw-s34","label":"scam","expect":"care","family":"official_phishing","text":"Your FASTag KYC is pending. Update now or your tag will be blacklisted: http://fastag-kyc.link"}
+{"id":"rw-s35","label":"scam","expect":"danger","family":"digital_arrest","text":"Hello, this call is from TRAI. Your mobile number is being used for illegal activities and will be blocked in two hours. Press 1 to talk to the police officer."}
+{"id":"rw-s36","label":"scam","expect":"danger","family":"impersonation_relationship","text":"Hi beta, this is your uncle from Dubai, I sent you Rs 50,000 by mistake, please return it to this account urgently."}
+{"id":"rw-b01","label":"benign","expect":"safe","text":"OTP for your SBI login is 480912. Do NOT share with anyone, including bank staff."}
+{"id":"rw-b02","label":"benign","expect":"safe","text":"Your Amazon order #402-1928 has been shipped and will arrive Tuesday. Track it in the Amazon app."}
+{"id":"rw-b03","label":"benign","expect":"safe","text":"Hi beta, dinner at 8 tonight at nani's house. Bring the sweets."}
+{"id":"rw-b04","label":"benign","expect":"safe","text":"Dear Customer, Rs 2,450.00 has been debited from your A/c XX4521 on 01-10-26 towards UPI/Swiggy. Not you? Call 18001234 to report. -HDFC Bank"}
+{"id":"rw-b05","label":"benign","expect":"safe","text":"Your electricity bill of Rs 1,284 for consumer no 30129845 is due on 15 Oct. Pay via the official app or website. -BESCOM"}
+{"id":"rw-b06","label":"benign","expect":"safe","text":"Mummy main hostel pahunch gaya, kal call karunga. Khana kha liya."}
+{"id":"rw-b07","label":"benign","expect":"safe","text":"Papa, can you pick me up from tuition at 6? My cycle has a puncture."}
+{"id":"rw-b08","label":"benign","expect":"safe","text":"Your Swiggy order is on the way. Share OTP 4821 with the delivery partner only at your doorstep."}
+{"id":"rw-b09","label":"benign","expect":"notdanger","text":"Dear customer, as per RBI guidelines please complete your periodic KYC update by visiting your nearest branch. Bank never asks for OTP or password. -SBI"}
+{"id":"rw-b10","label":"benign","expect":"safe","text":"Meeting moved to 3 pm tomorrow. Please bring the printed report."}
+{"id":"rw-b11","label":"benign","expect":"safe","text":"Happy birthday beta! Lots of love from dadi and dadu. Come home soon."}
+{"id":"rw-b12","label":"benign","expect":"notdanger","text":"Your parcel from Myntra is out for delivery today. Delivery partner Ramesh will call you. Order ID 9981234."}
+{"id":"rw-b13","label":"benign","expect":"safe","text":"Rs 15,000 credited to your A/c XX7781 by NEFT from ACME PVT LTD salary. Avl bal Rs 42,310. -ICICI Bank"}
+{"id":"rw-b14","label":"benign","expect":"safe","text":"Uncle, I reached Pune safely. The train was on time. Will call you in the evening."}
+{"id":"rw-b15","label":"benign","expect":"notdanger","text":"Reminder: your LIC premium of Rs 8,200 for policy no 512345678 is due on 20 Oct. Pay at the branch or on licindia.in."}
+{"id":"rw-b16","label":"benign","expect":"safe","text":"Bhai kal cricket khelne chalega? Subah 7 baje ground pe milte hain."}
+{"id":"rw-b17","label":"benign","expect":"notdanger","text":"We are hiring! Infosys campus drive for 2026 graduates. Apply only on the official careers portal. No fee is charged at any stage."}
+{"id":"rw-b18","label":"benign","expect":"safe","text":"Your Ola ride is confirmed. Driver Suresh, white Dzire KA01AB1234, arriving in 4 minutes."}
+{"id":"rw-b19","label":"benign","expect":"notdanger","text":"Hi mom, I transferred Rs 5,000 to your account for the electricity bill. Let me know when you get it."}
+{"id":"rw-b20","label":"benign","expect":"safe","text":"बेटा, कल सुबह मंदिर चलेंगे। जल्दी उठ जाना।"}
+{"id":"rw-b21","label":"benign","expect":"notdanger","text":"Your Jio recharge of Rs 299 is successful. Validity 28 days. Data 2GB per day."}
+{"id":"rw-b22","label":"benign","expect":"safe","text":"Dear Rohan, your appointment with Dr. Mehta is confirmed for Friday 11 am at Apollo Clinic."}
+{"id":"rw-b23","label":"benign","expect":"notdanger","text":"Your account statement for September is ready. Log in to NetBanking to view it. -Axis Bank"}
+{"id":"rw-b24","label":"benign","expect":"safe","text":"Son, the plumber is coming at 4. Please be home to open the door."}
+{"id":"rw-b25","label":"benign","expect":"notdanger","text":"Congratulations on your new job beta! Proud of you. Call when you are free."}
+{"id": "rw-s37", "label": "scam", "expect": "danger", "text": "ICICI Alert: Your credit card reward points worth Rs 7,850 expire today. Redeem now at http://icici-rewardz.in/claim before they lapse."}
+{"id": "rw-s38", "label": "scam", "expect": "danger", "text": "Namaste, main Delhi Police se bol raha hoon. Aapke beta ko rape case me pakda hai. Case khatam karna hai to abhi 50,000 GPay karo, warna FIR hogi."}
+{"id": "rw-s39", "label": "scam", "expect": "danger", "text": "Your Blue Dart shipment AWB 88213 is on hold. Customs found suspicious items. Connect with Narcotics officer now or face legal action."}
+{"id": "rw-s40", "label": "scam", "expect": "danger", "text": "Dear user your mobile number will be disconnected by Department of Telecom within 2 hours. Press 0 to know more."}
+{"id": "rw-s41", "label": "scam", "expect": "danger", "text": "Work from home opportunity! Rate hotels on Google Maps and get Rs 50 per rating. Earn up to 4000 per day. Message HR on Telegram."}
+{"id": "rw-s42", "label": "scam", "expect": "danger", "text": "Your account has been credited with 6,000 by mistake, kindly transfer it back to my GPay number 9123456789, it was my son's fees."}
+{"id": "rw-s43", "label": "scam", "expect": "danger", "text": "Congratulations! Your number has won an iPhone 16 in the Flipkart Big Billion lucky draw. Pay delivery charges of Rs 499 to receive it."}
+{"id": "rw-s44", "label": "scam", "expect": "danger", "text": "Mom it's me, I lost my phone and this is my new number. I need to pay my hostel fees today, can you send 15,000? Please don't call, I can't talk right now."}
+{"id": "rw-s45", "label": "scam", "expect": "danger", "text": "Your PAN is not linked with Aadhaar and your bank account will be frozen today. Update immediately: https://pan-aadhaar-link.xyz"}
+{"id": "rw-s46", "label": "scam", "expect": "danger", "text": "Earn guaranteed 5% daily returns. Our experts are in the Telegram channel, join now and double your money in 20 days."}
+{"id": "rw-s47", "label": "scam", "expect": "danger", "text": "Loan repayment overdue. If not paid within 2 hours your edited obscene photos will be sent to your family and contacts."}
+{"id": "rw-s48", "label": "scam", "expect": "danger", "text": "Hello sir, I am calling from SBI customer care. Your debit card is blocked. Please tell me the OTP sent to your number to unblock it."}
+{"id": "rw-s49", "label": "scam", "expect": "danger", "text": "To receive your electricity subsidy of Rs 2,000, scan the QR code sent on WhatsApp and enter your UPI PIN."}
+{"id": "rw-s50", "label": "scam", "expect": "danger", "text": "You have earned Rs 22,000 commission. To withdraw, pay 18% GST first. Amount will be credited within 1 hour."}
+{"id": "rw-s51", "label": "scam", "expect": "danger", "text": "Aapka bijli connection aaj raat 10 baje kaat diya jayega. Turant bijli adhikari se baat kare 8877665544."}
+{"id": "rw-s52", "label": "scam", "expect": "care", "text": "Your Netflix subscription has expired. Update payment details to continue watching: http://netflix-renew.info"}
+{"id": "rw-s53", "label": "scam", "expect": "care", "text": "Hi dear, I am a fund manager. I can help you earn huge profits in crypto. Shall I add you to my VIP investors group?"}
+{"id": "rw-s54", "label": "scam", "expect": "danger", "text": "Customs department: your gift parcel from UK contains foreign currency. Pay clearance fee of Rs 35,000 to release it or police case will be filed."}
+{"id": "rw-b26", "label": "benign", "expect": "safe", "text": "Your OTP to verify your Flipkart account is 739201. It is valid for 10 minutes. Do not share it with anyone."}
+{"id": "rw-b27", "label": "benign", "expect": "safe", "text": "Beta, papa ki dawai khatam ho gayi hai, aate waqt medical store se le aana."}
+{"id": "rw-b28", "label": "benign", "expect": "safe", "text": "Rs 1,200 debited from A/c XX3390 via UPI to Zepto on 02-10-26. Not you? Report on the Kotak app. -Kotak Bank"}
+{"id": "rw-b29", "label": "benign", "expect": "notdanger", "text": "Your BlueDart shipment AWB 77120 will be delivered today between 2 and 6 pm. Keep the OTP ready for the delivery agent."}
+{"id": "rw-b30", "label": "benign", "expect": "safe", "text": "Uncle the function starts at 7. Parking is available near the gate."}
+{"id": "rw-b31", "label": "benign", "expect": "notdanger", "text": "Dear customer, your electricity bill for consumer no 4410923 is Rs 960, due 18 Oct. Pay on the official MSEDCL app."}
+{"id": "rw-b32", "label": "benign", "expect": "safe", "text": "Son I have sent the documents by courier, you will get them tomorrow."}
+{"id": "rw-b33", "label": "benign", "expect": "notdanger", "text": "Your Airtel bill of Rs 499 is generated. Pay by 20 Oct to avoid late fees. Pay on the Airtel Thanks app."}
+{"id": "rw-b34", "label": "benign", "expect": "safe", "text": "Mummy main theek hoon, exam achha gaya. Kal ghar aa raha hoon."}
+{"id": "rw-b35", "label": "benign", "expect": "notdanger", "text": "Hi, this is Neha from TCS HR. Your interview is scheduled on 10 Oct at 11 am. Please carry your ID proof. There is no fee for the interview."}
+{"id": "rw-b36", "label": "benign", "expect": "safe", "text": "Your Zomato order from Meghana Foods has been delivered. Enjoy your meal!"}
+{"id": "rw-b37", "label": "benign", "expect": "notdanger", "text": "Reminder from your society: maintenance of Rs 3,000 for October is due. Pay to the society account by the 10th."}
+{"id": "rw-s55", "label": "scam", "expect": "danger", "text": "Axis Bank: Dear customer, your account has been temporarily restricted due to suspicious login. Verify your identity at axis-secure-login.com/verify or it will be permanently closed."}
+{"id": "rw-s56", "label": "scam", "expect": "danger", "text": "I am calling from Enforcement Directorate. Your bank account is used in a hawala case. You must not disconnect this call. Transfer your savings to our safe account for checking, it will be returned."}
+{"id": "rw-s57", "label": "scam", "expect": "danger", "text": "Dadi main Rohan hoon, mera accident ho gaya hai, police ne pakad liya. Jaldi 30,000 is number pe bhejo, papa ko mat batana."}
+{"id": "rw-s58", "label": "scam", "expect": "danger", "text": "Get paid Rs 200 for every Instagram post you like. Daily payout to your UPI. Contact our HR team on WhatsApp to start."}
+{"id": "rw-s59", "label": "scam", "expect": "danger", "text": "Your gas connection subsidy is pending. Install the Indane KYC app from this link to receive it: http://indane-kyc.top/app.apk"}
+{"id": "rw-s60", "label": "scam", "expect": "danger", "text": "You have won Rs 10,00,000 in the Jio anniversary lottery. Contact our manager on 9012345678 and pay a processing fee of Rs 5,500 to receive the amount."}
+{"id": "rw-s61", "label": "scam", "expect": "danger", "text": "Sir I sent you Rs 3,500 for the bike by mistake extra, please send the extra back on PhonePe quickly."}
+{"id": "rw-s62", "label": "scam", "expect": "danger", "text": "Invest Rs 10,000 today and get Rs 1,00,000 in 30 days. Guaranteed profit. Download our trading app now."}
+{"id": "rw-s63", "label": "scam", "expect": "care", "text": "Your Amazon account is locked due to unusual activity. Click here to unlock: http://amzn-secure.info/unlock"}
+{"id": "rw-s64", "label": "scam", "expect": "danger", "text": "Main CBI officer bol raha hoon, aapke naam pe drugs ka parcel mila hai, video call pe aao aur camera band mat karna."}
+{"id": "rw-b38", "label": "benign", "expect": "safe", "text": "Your OTP for Paytm login is 553901. Never share your OTP with anyone. Paytm will never call you asking for it."}
+{"id": "rw-b39", "label": "benign", "expect": "safe", "text": "Papa I reached office. Will call you at lunch."}
+{"id": "rw-b40", "label": "benign", "expect": "safe", "text": "Rs 499 debited from A/c XX1123 for Netflix subscription via autopay. -HDFC Bank"}
+{"id": "rw-b41", "label": "benign", "expect": "notdanger", "text": "Your parcel AWB 55210 has been delivered at the front door. Rate your experience with Delhivery."}
+{"id": "rw-b42", "label": "benign", "expect": "safe", "text": "Beti, tum kab aa rahi ho? Nani ne laddoo banaye hain."}
+{"id": "rw-b43", "label": "benign", "expect": "notdanger", "text": "We have received your loan application. Our executive will verify documents at the branch. We never charge any fee before disbursement. -Bajaj Finance"}
