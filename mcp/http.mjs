@@ -9,7 +9,7 @@ const MAX_BODY = 64 * 1024;
 
 function send(res, code, obj, extra = {}) {
   const body = obj === undefined ? "" : JSON.stringify(obj);
-  res.writeHead(code, { "content-type": "application/json", "cache-control": "no-store", ...extra });
+  res.writeHead(code, { "content-type": "application/json", "cache-control": "no-store", vary: "Accept", ...extra });
   res.end(body);
 }
 
@@ -33,7 +33,7 @@ export async function handleHttp(req, res, preParsed) {
   if (req.method === "OPTIONS") return send(res, 204, undefined, { allow: "POST, OPTIONS" });
   if (req.method === "GET" && /\/health\/?$/.test(req.url || "")) return send(res, 200, { ok: true, server: "jaanchlo-mcp" });
   if ((req.method === "GET" || req.method === "HEAD") && wantsHtml(req)) {
-    res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" });
+    res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", vary: "Accept" });
     return res.end(req.method === "HEAD" ? "" : MCP_PAGE);
   }
   if (req.method !== "POST") return send(res, 405, { jsonrpc: "2.0", id: null, error: { code: -32000, message: "Method not allowed. This MCP endpoint is stateless and accepts POST only." } }, { allow: "POST, OPTIONS" });
