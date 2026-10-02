@@ -5,7 +5,8 @@ const steps=[
  ["extract (app is source of truth)","node",["engine/extract.mjs"]],
  ["engine test suite","node",["engine/tests/run_all.mjs"]],
  ["dataset integrity","node",["dataset/test_dataset.mjs"]],
- ["evaluation thresholds","node",["dataset/eval.mjs"]]
+ ["evaluation thresholds","node",["dataset/eval.mjs"]],
+ ["real-world wording thresholds","node",["dataset/eval_realworld.mjs"]]
 ];
 let failed=null;
 for(const [name,cmd,args] of steps){

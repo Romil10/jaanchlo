@@ -58,7 +58,7 @@ export const TOOLS = [
     title: "Check a message for scam patterns",
     description:
       "Checks the text of an SMS, WhatsApp message, email, or call transcript that a person in India received, using " +
-      "JaanchLo's open-source rule engine (48 signals, 12 knockout rules, India-specific scam families). Returns a " +
+      "JaanchLo's open-source rule engine (48 signals, 20 knockout rules, India-specific scam families). Returns a " +
       "verdict (safe, care, or danger), a 0-100 risk score, the matched scam type, up to five plain-language reasons, " +
       "and the next step. Use when the user asks whether a specific message they received is a scam or fraud. " +
       "Limitations: it reads text only (not images or links' destinations), and it is a second opinion, not a guarantee.",
