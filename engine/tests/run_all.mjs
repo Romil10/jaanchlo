@@ -1,5 +1,5 @@
 import { spawnSync } from "child_process";
-const tests=["test_adapters.mjs","test_scoring.mjs","test_explain.mjs","test_extractors.mjs","test_checklist.mjs","test_api.mjs"];
+const tests=["test_adapters.mjs","test_scoring.mjs","test_explain.mjs","test_extractors.mjs","test_checklist.mjs","test_api.mjs","test_mcp.mjs"];
 let fails=0;
 for(const t of tests){
   console.log("\n===== "+t+" =====");

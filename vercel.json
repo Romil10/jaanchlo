@@ -3,6 +3,32 @@
     {
       "source": "/check",
       "destination": "/app/jaanchlo_app.html"
+    },
+    {
+      "source": "/mcp",
+      "destination": "/api/mcp"
+    },
+    {
+      "source": "/mcp/health",
+      "destination": "/api/mcp"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/support",
+      "destination": "/support.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/mcp.mjs": {
+      "includeFiles": "{dataset/rubric.json,dataset/engine.mjs,engine/**}",
+      "maxDuration": 10
+    }
+  }
 }
