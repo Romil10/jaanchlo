@@ -80,6 +80,7 @@ ok(brBody.includes("JaanchLo for ChatGPT") && brBody.includes("https://jaanchlo.
 const sse = await fetch(url, { headers: { accept: "text/event-stream" } });
 ok(sse.status === 405, "MCP client GET asking for an event stream -> still 405");
 const mixed = await fetch(url, { headers: { accept: "text/html, text/event-stream" } });
+ok((br.headers.get("cache-control")||"").includes("no-store") && /accept/i.test(br.headers.get("vary")||""), "explainer page is uncacheable and varies on Accept, so a shared cache cannot serve it to protocol clients");
 ok(mixed.status === 405, "GET accepting both HTML and event stream is treated as a protocol client -> 405");
 const post2 = await rpc("ping");
 ok(post2.status === 200, "POST still answers after the browser branch");
