@@ -3,6 +3,7 @@
 // Privacy: request bodies are parsed in memory and never logged or persisted.
 import http from "http";
 import { handleMessage } from "./core.mjs";
+import { MCP_PAGE } from "./page.mjs";
 
 const MAX_BODY = 64 * 1024;
 
@@ -21,10 +22,20 @@ function readRaw(req) {
   });
 }
 
+// A person's browser asks for HTML; an MCP client opening a stream asks for text/event-stream.
+function wantsHtml(req) {
+  const a = String((req.headers && req.headers.accept) || "").toLowerCase();
+  return a.includes("text/html") && !a.includes("text/event-stream");
+}
+
 // preParsed: Vercel may already have parsed the JSON body into req.body.
 export async function handleHttp(req, res, preParsed) {
   if (req.method === "OPTIONS") return send(res, 204, undefined, { allow: "POST, OPTIONS" });
   if (req.method === "GET" && /\/health\/?$/.test(req.url || "")) return send(res, 200, { ok: true, server: "jaanchlo-mcp" });
+  if ((req.method === "GET" || req.method === "HEAD") && wantsHtml(req)) {
+    res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" });
+    return res.end(req.method === "HEAD" ? "" : MCP_PAGE);
+  }
   if (req.method !== "POST") return send(res, 405, { jsonrpc: "2.0", id: null, error: { code: -32000, message: "Method not allowed. This MCP endpoint is stateless and accepts POST only." } }, { allow: "POST, OPTIONS" });
 
   let msg = preParsed;

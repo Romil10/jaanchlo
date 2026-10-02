@@ -73,6 +73,16 @@ const e6 = await fetch(url, { method: "POST", headers: H, body: "{bad json" });
 ok(e6.status === 400, "malformed JSON -> 400");
 const e7 = await fetch(url, { method: "GET" });
 ok(e7.status === 405, "GET -> 405 (stateless POST-only endpoint)");
+const br = await fetch(url, { headers: { accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" } });
+const brBody = await br.text();
+ok(br.status === 200 && (br.headers.get("content-type") || "").startsWith("text/html"), "browser GET -> 200 HTML explainer page");
+ok(brBody.includes("JaanchLo for ChatGPT") && brBody.includes("https://jaanchlo.regnor.systems/mcp") && !brBody.includes("\u2014"), "explainer names the endpoint and has no em dashes");
+const sse = await fetch(url, { headers: { accept: "text/event-stream" } });
+ok(sse.status === 405, "MCP client GET asking for an event stream -> still 405");
+const mixed = await fetch(url, { headers: { accept: "text/html, text/event-stream" } });
+ok(mixed.status === 405, "GET accepting both HTML and event stream is treated as a protocol client -> 405");
+const post2 = await rpc("ping");
+ok(post2.status === 200, "POST still answers after the browser branch");
 
 // privacy static check
 for (const f of ["../../mcp/core.mjs", "../../mcp/http.mjs", "../../api/mcp.mjs"]) {
